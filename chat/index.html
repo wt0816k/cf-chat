@@ -95,20 +95,25 @@
         const count = 20;
         const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
 
-        const req = await fetch(url);
-        const result = req.json();
-        if (result !== 'error') {
-            for (const data of result) {
-                $('#message-data').append(
-                    '<span class="message-data-text message-data-id">' + data.id + '</span>' +
-                    '<span class="message-data-text message-data-timestamp">' + data.timestamp + '</span>' +
-                    '<span class="message-data-text message-data-username">' + data.username + '</span>' +
-                    '<span class="message-data-text message-data-message">' + data.message + '</span>'
-                );
-            }
+        fetch(url)
+            .then(function (data) {
+                return data.json();
+            })
+            .then(function (json) {
+                for (const data of json) {
+                    $('#message-data').append(
+                        '<span class="message-data-text message-data-id">' + data.id + '</span>' +
+                        '<span class="message-data-text message-data-timestamp">' + data.timestamp + '</span>' +
+                        '<span class="message-data-text message-data-username">' + data.username + '</span>' +
+                        '<span class="message-data-text message-data-message">' + data.message + '</span>'
+                    );
 
-            console.log(result);
-            return result;
+                    console.log(json);
+                    return json;
+                }
+            });
+
+        if (result !== 'error') {
         } else {
             console.log('[Infomation] HTTP request failed.')
         }
