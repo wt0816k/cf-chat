@@ -73,6 +73,7 @@ body {
 }
 
 .login-error {
+    display: none;
     color: #c50909;
     font-size: 18px;
 }
