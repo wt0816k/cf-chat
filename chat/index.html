@@ -93,7 +93,8 @@
     async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 20;
-        const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
+        const param = new URLSearchParams({ id: id, token: token, count: count })
+        const url = gas + '?' + param;
 
         fetch(url)
             .then(function (data) {
@@ -142,7 +143,26 @@
     })
 
     $('#send').on('click', function () {
+        const message = $('#message-input').val();
+        const date = new Intl.DateTimeFormat("ja-jp", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+        }).format(new Date());
 
+        const json = { token: token, timestamp: date, username: username, message: message };
+        const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const param = new URLSearchParams({ data: atob(JSON.stringify(json)) });
+        const url = gas + '?' + param;
+
+        const method = "POST";
+        fetch(url, { method }).then((res) => res.json()).then(console.log).catch(console.error);
+
+        
+        getMessage();
     })
 
     $('#message-update').on('click', function () {
