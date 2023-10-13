@@ -74,4 +74,9 @@ body {
     border: none;
     border-radius: 8px;
     background: #77dff7;
+    cursor: pointer;
+}
+
+#run-login:hover {
+    background: #4bd6f5;
 }
