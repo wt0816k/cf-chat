@@ -95,9 +95,9 @@
         const count = 20;
         const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
 
-        const result = (await fetch(url)).json();
+        const req = await fetch(url);
+        const result = req.json();
         if (result !== 'error') {
-            result = JSON.parse(result);
             for (const data of result) {
                 $('#message-data').append(
                     '<span class="message-data-text message-data-id">' + data.id + '</span>' +
