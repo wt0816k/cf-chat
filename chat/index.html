@@ -37,7 +37,11 @@
         </div>
     </div>
     <div class="main">
-        <footer>
+        <main class="message-area">
+            <div id="message-data">
+            </div>
+        </main>
+        <footer class="input-area">
             <input id="message-input" placeholder="メッセージを入力..." type="text">
             <button id="send">送信</button>
         </footer>
@@ -90,6 +94,14 @@
         const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
 
         const result = (await fetch(url)).json();
+        for (let i = 0; i < result.length; i++) {
+            const _id = result[i].id;
+            const _timestamp = result[i].timestamp;
+            const _username = result[i].username;
+            const _message = result[i].message;
+            
+            $('#message-data').append('');
+        }
         return result;
     }
 
