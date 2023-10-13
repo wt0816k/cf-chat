@@ -155,7 +155,7 @@
 
         const json = { token: token, timestamp: date, username: username, message: message };
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
-        const param = new URLSearchParams({ data: atob(JSON.stringify(json)) });
+        const param = new URLSearchParams({ data: btoa(unescape(encodeURIComponent(JSON.stringify(json)))) });
         const url = gas + '?' + param;
 
         const method = "POST";
