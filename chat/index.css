@@ -36,6 +36,7 @@ body {
 
 .modal__content {
     text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
     display: inline-block;
 }
 
