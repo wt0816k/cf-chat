@@ -97,19 +97,15 @@
 
         const result = (await fetch(url)).json();
         if (result !== 'error') {
-            for (let i = 0; i < result.length; i++) {
-                const _id = result[i].id;
-                const _timestamp = result[i].timestamp;
-                const _username = result[i].username;
-                const _message = result[i].message;
-
+            for (const data of result) {
                 $('#message-data').append(
-                    '<span class="message-data-text message-data-id">' + _id + '</span>' +
-                    '<span class="message-data-text message-data-timestamp">' + _timestamp + '</span>' +
-                    '<span class="message-data-text message-data-username">' + _username + '</span>' +
-                    '<span class="message-data-text message-data-message">' + _message + '</span>'
+                    '<span class="message-data-text message-data-id">' + data.id + '</span>' +
+                    '<span class="message-data-text message-data-timestamp">' + data.timestamp + '</span>' +
+                    '<span class="message-data-text message-data-username">' + data.username + '</span>' +
+                    '<span class="message-data-text message-data-message">' + data.message + '</span>'
                 );
             }
+            
             console.log(result);
             return result;
         } else {
