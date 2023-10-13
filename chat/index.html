@@ -97,7 +97,12 @@
 
         fetch(url)
             .then(function (data) {
-                return data.json();
+                if (data !== 'error') {
+                    return data.json();
+                } else {
+                    console.log('[Infomation] HTTP request failed.')
+                    return;
+                }
             })
             .then(function (json) {
                 for (const data of json) {
@@ -112,11 +117,6 @@
                     return json;
                 }
             });
-
-        if (result !== 'error') {
-        } else {
-            console.log('[Infomation] HTTP request failed.')
-        }
     }
 
     $('#run-login').on('click', function () {
