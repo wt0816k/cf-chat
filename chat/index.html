@@ -90,7 +90,7 @@
         const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
 
         const result = (await fetch(url)).json();
-        console.log(result);
+        return result;
     }
 
     $('#run-login').on('click', function () {
@@ -110,7 +110,8 @@
         token = _token;
         username = _username;
 
-        getMessage();
+        const result = getMessage();
+        console.log(result);
     })
 
     $(function () {

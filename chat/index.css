@@ -46,6 +46,8 @@ body {
 }
 
 .modal__items {
+    display: flex;
+    flex-direction: column;
     margin-top: 38px;
     margin-bottom: 34px;
 }
@@ -54,7 +56,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 .modal__item > a {
