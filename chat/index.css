@@ -39,6 +39,10 @@ body {
     display: inline-block;
 }
 
+.modal__content > h1 {
+    font-size: 24px;
+}
+
 .modal__items {
     display: flex;
     justify-content: space-between;
