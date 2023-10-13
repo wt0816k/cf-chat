@@ -18,7 +18,6 @@ body {
     margin-right: auto;
     margin-left: auto;
     width: 400px;
-    height: 540px;
 }
 
 .modal__inner {
@@ -42,6 +41,7 @@ body {
 
 .modal__items {
     display: flex;
+    justify-content: space-between;
 }
 
 .modal__items > a {
