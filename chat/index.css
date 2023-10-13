@@ -17,13 +17,14 @@ body {
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    width: 400px;
+    width: 460px;
 }
 
 .modal__inner {
     margin-top: 125px;
     margin-bottom: 125px;
     position: relative;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     background: #fff;
@@ -69,10 +70,10 @@ body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;
     padding: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
     border: none;
-    border-radius: 8px;
+    border-radius: 1000px;
     background: #77dff7;
     cursor: pointer;
     transition-duration: 0.21s;
