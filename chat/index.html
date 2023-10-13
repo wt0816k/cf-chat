@@ -89,13 +89,13 @@
     }
 
     $('#run-login').on('click', function () {
-        $('#js-modal').hide();
+        $('#js-modal').fadeOut(200);
         $('.main').eq(0).show();
     })
 
     $(function () {
         $('.main').eq(0).hide();
-        
+
         if (loadLoginInfo()) {
             getMessage();
         } else {
