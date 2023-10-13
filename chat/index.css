@@ -17,8 +17,8 @@ body {
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    width: 80%;
-    min-width: 440px;
+    width: 400px;
+    height: 540px;
 }
 
 .modal__inner {
@@ -38,8 +38,6 @@ body {
 .modal__content {
     text-align: center;
     display: inline-block;
-    width: 300px;
-    height: 240px;
 }
 
 .modal__items {
