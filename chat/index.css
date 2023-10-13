@@ -72,6 +72,11 @@ body {
     background: #ededed;
 }
 
+.login-error {
+    color: #c50909;
+    font-size: 18px;
+}
+
 #run-login {
     font-family: 'Noto Sans', sans-serif;
     font-size: 16px;

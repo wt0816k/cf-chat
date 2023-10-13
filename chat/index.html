@@ -30,6 +30,7 @@
                             <input type="text" id="login-username">
                         </div>
                     </div>
+                    <a class="login-error">未入力の項目があります。</a>
                     <button id="run-login">OK</button>
                 </div>
             </div>
@@ -97,16 +98,8 @@
         const _token = $('#login-token').val();
         const _username = $('#login-username').val();
 
-        if (_id === '') {
-            $('.modal__item_text').eq(0).css('color', '#c50909')
-            return;
-        }
-        if (_token === '') {
-            $('.modal__item_text').eq(1).css('color', '#c50909')
-            return;
-        }
-        if (_username === '') {
-            $('.modal__item_text').eq(2).css('color', '#c50909')
+        if (_id === '' || _token === '' || _username === '') {
+            $('.login-error').eq(0).show();
             return;
         }
 
