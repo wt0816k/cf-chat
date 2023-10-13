@@ -28,8 +28,57 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
+    var id = '';
+    var token = '';
+    var username = '';
+
+    function getCookieArray() {
+        var arr = new Array();
+        if (document.cookie != '') {
+            var tmp = document.cookie.split('; ');
+            for (var i = 0; i < tmp.length; i++) {
+                var data = tmp[i].split('=');
+                arr[data[0]] = decodeURIComponent(data[1]);
+            }
+        }
+        return arr;
+    }
+
+    function loadLoginInfo() {
+        const arr = getCookieArray();
+        if (arr['logininfo'] === '') {
+            return false;
+        } else {
+            const logininfo = JSON.parse(btoa(arr['logininfo']));
+            id = logininfo.id;
+            token = logininfo.token;
+            username = logininfo.username;
+        }
+    }
+
+    function writeLoginInfo(_id, _token, _username) {
+        const json = {
+            'id': _id,
+            'token': _token,
+            'username': _username
+        }
+
+        document.cookie = 'logininfo=' + JSON.stringify(json);
+    }
+
+    $(function () {
+        if (checkLoginInfo()) {
+            
+        } else {
+            alert('ログイン情報がありません！')
+        }
+    })
     $('#test').on('click', async function () {
-        const result = (await fetch('https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec?id=75245065&count=20')).json();
+        const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const count = 20;
+        const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
+
+        const result = (await fetch(url)).json();
         console.log(result);
     })
 </script>
