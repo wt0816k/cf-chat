@@ -42,9 +42,18 @@ body {
 .modal__items {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
 }
 
 .modal__items > a {
     font-size: 18px;
     margin-right: 20px;
+}
+
+.modal__items > input {
+    font-size: 17px;
+    padding: 3px;
+    border: none;
+    border-radius: 1000px;
+    background: #d3d3d3;
 }
