@@ -53,7 +53,8 @@ body {
 .modal__items > input {
     font-size: 17px;
     padding: 3px;
+    padding-left: 12px;
     border: none;
     border-radius: 1000px;
-    background: #d3d3d3;
+    background: #ededed;
 }
