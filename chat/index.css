@@ -46,18 +46,22 @@ body {
 }
 
 .modal__items {
+    margin-top: 38px;
+    margin-bottom: 34px;
+}
+
+.modal__item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
 }
 
-.modal__items > a {
+.modal__item > a {
     font-size: 18px;
-    margin-left: 28px;
     margin-right: 20px;
 }
 
-.modal__items > input {
+.modal__item > input {
     font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
     padding: 8px;
