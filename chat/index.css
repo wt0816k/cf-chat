@@ -75,6 +75,7 @@ body {
     border-radius: 8px;
     background: #77dff7;
     cursor: pointer;
+    transition-duration: 0.21s;
 }
 
 #run-login:hover {
