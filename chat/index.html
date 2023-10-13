@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="layer js-modal">
+    <div id="js-modal" class="layer">
         <div class="modal">
             <div class="modal__inner">
                 <div class="modal__content">
@@ -88,7 +88,14 @@
         console.log(result);
     }
 
+    $('#run-login').on('click', function () {
+        $('#js-modal').hide();
+        $('.main').eq(0).show();
+    })
+
     $(function () {
+        $('.main').eq(0).hide();
+        
         if (loadLoginInfo()) {
             getMessage();
         } else {
