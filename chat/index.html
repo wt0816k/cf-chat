@@ -53,6 +53,7 @@
             id = logininfo.id;
             token = logininfo.token;
             username = logininfo.username;
+            return true;
         }
     }
 
@@ -67,7 +68,7 @@
     }
 
     $(function () {
-        if (checkLoginInfo()) {
+        if (loadLoginInfo()) {
             
         } else {
             alert('ログイン情報がありません！')
