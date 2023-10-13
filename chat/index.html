@@ -97,6 +97,7 @@
 
         const result = (await fetch(url)).json();
         if (result !== 'error') {
+            result = JSON.parse(result);
             for (const data of result) {
                 $('#message-data').append(
                     '<span class="message-data-text message-data-id">' + data.id + '</span>' +
@@ -105,7 +106,7 @@
                     '<span class="message-data-text message-data-message">' + data.message + '</span>'
                 );
             }
-            
+
             console.log(result);
             return result;
         } else {
