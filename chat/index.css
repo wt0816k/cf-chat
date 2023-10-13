@@ -36,11 +36,6 @@ body {
 }
 
 .modal__content {
-    padding-top: 15px;
-    padding-bottom: 23px;
-}
-
-.modal-element {
     text-align: center;
     display: inline-block;
     width: 300px;
