@@ -93,11 +93,11 @@
         const _token = $('#login-token').val();
         const _username = $('#login-username').val();
         
-        if (_id === undefined) {
+        if (_id === '') {
             $('.modal__item_text').eq(0).css('color', '#c50909')
-        } else if (_token === undefined) {
+        } else if (_token === '') {
             $('.modal__item_text').eq(1).css('color', '#c50909')
-        } else if (_username === undefined) {
+        } else if (_username === '') {
             $('.modal__item_text').eq(2).css('color', '#c50909')
         } else {
             $('#js-modal').fadeOut(140);
