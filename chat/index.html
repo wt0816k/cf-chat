@@ -80,20 +80,21 @@
         document.cookie = 'logininfo=' + JSON.stringify(json);
     }
 
-    $(function () {
-        if (loadLoginInfo()) {
-
-        } else {
-            alert('ログイン情報がありません！')
-        }
-    })
-    $('#test').on('click', async function () {
+    async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 20;
         const url = gas + '?id=' + id + '&token=' + token + '&count=' + count;
 
         const result = (await fetch(url)).json();
         console.log(result);
+    }
+
+    $(function () {
+        if (loadLoginInfo()) {
+            getMessage();
+        } else {
+            console.log('[Infomation] No login information is available.')
+        }
     })
 </script>
 
