@@ -38,6 +38,7 @@
         </div>
     </div>
     <div class="main">
+        <button id="message-update">更新</button>
         <main class="message-area">
             <div id="message-data">
             </div>
@@ -107,7 +108,7 @@
                     '<span class="message-data-text message-data-timestamp">' + _timestamp + '</span>' +
                     '<span class="message-data-text message-data-username">' + _username + '</span>' +
                     '<span class="message-data-text message-data-message">' + _message + '</span>'
-                        );
+                );
             }
             return result;
         } else {
@@ -137,7 +138,11 @@
     })
 
     $('#send').on('click', function () {
-        
+
+    })
+
+    $('#message-update').on('click', function () {
+        getMessage();
     })
 
     $(function () {
