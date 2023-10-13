@@ -46,7 +46,7 @@
 
     function loadLoginInfo() {
         const arr = getCookieArray();
-        if (arr['logininfo'] === '') {
+        if (arr['logininfo'] === undefined) {
             return false;
         } else {
             const logininfo = JSON.parse(btoa(arr['logininfo']));
@@ -69,7 +69,7 @@
 
     $(function () {
         if (loadLoginInfo()) {
-            
+
         } else {
             alert('ログイン情報がありません！')
         }
