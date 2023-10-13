@@ -110,6 +110,7 @@
                     '<span class="message-data-text message-data-message">' + _message + '</span>'
                 );
             }
+            console.log(result);
             return result;
         } else {
             console.log('[Infomation] HTTP request failed.')
@@ -133,8 +134,7 @@
         token = _token;
         username = _username;
 
-        const result = getMessage();
-        console.log(result);
+        getMessage();
     })
 
     $('#send').on('click', function () {
