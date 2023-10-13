@@ -65,7 +65,8 @@ body {
     font-family: 'Noto Sans', sans-serif;
     font-size: 17px;
     padding: 8px;
-    padding-left: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
     border: none;
     border-radius: 8px;
     background: #ededed;
