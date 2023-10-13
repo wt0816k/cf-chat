@@ -16,6 +16,7 @@
                         <div class="modal-element">
                             <p>Chatにログイン</p>
                             <input id="login-id">
+                            <button id="test">取得</button>
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,10 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-
+    $('#test').on('click', async function () {
+        const result = (await fetch('https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec?id=75245065&count=20')).json();
+        console.log(result);
+    })
 </script>
 
 </html>
