@@ -159,7 +159,7 @@
         const url = gas + '?' + param;
 
         const method = "POST";
-        fetch(url, { method }).then((res) => res.json()).then(console.log).catch(console.error);
+        fetch(gas + '?data=test', { method }).then((res) => res.json()).then(console.log).catch(console.error);
 
         getMessage();
     })
