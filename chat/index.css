@@ -143,7 +143,7 @@ footer>div {
     background: #ebebeb;
     border: none;
     border-radius: 100px;
-    width: 100%;
+    width: calc(100% - 12px);
     box-sizing: border-box;
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     z-index: 2;
@@ -152,9 +152,9 @@ footer>div {
 #send {
     display: inline;
     position: fixed;
-    right: 6px;
-    bottom: 6px;
-    height: 46px;
+    right: 9px;
+    bottom: 9px;
+    height: 40px;
     border: none;
     border-radius: 100px;
     color: white;
