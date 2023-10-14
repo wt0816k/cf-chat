@@ -148,8 +148,7 @@
                     );
                 }
 
-                const itemtop = $('.message-data-items').eq($(this).length).offset().top;
-                $("html").animate({scrollTop: itemtop});
+                document.getElementById('message-data').scrollTo(0,document.getElementById('message-data').scrollHeight);
 
                 console.log('[Information] Message has been updated.');
                 return json;
