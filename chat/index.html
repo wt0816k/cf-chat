@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <title>Chat</title>
+    <title>チャット</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
 </head>
@@ -76,8 +76,9 @@
     var id = '';
     var token = '';
     var username = '';
-
     var timerId = '';
+    var oldjson = {};
+    var isactive = true;
 
     function getCookieArray() {
         var arr = new Array();
@@ -121,8 +122,6 @@
         document.cookie = 'logininfo=' + JSON.stringify(json);
     }
 
-    var oldjson = {};
-
     async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 50;
@@ -151,6 +150,10 @@
                             '<span class="message-data-item message-data-message">' + data.message + '</span>' +
                             '</div>'
                         );
+                    }
+
+                    if (!isactive) {
+                        document.title = '新着メッセージ | チャット';
                     }
 
                     document.getElementById('message-data').scrollTo(0, document.getElementById('message-data').scrollHeight);
@@ -237,6 +240,16 @@
     $('#message-stop').on('click', function () {
         clearInterval(timerId);
     })
+
+    document.onvisibilitychange = function () {
+        if (document.visibilityState === 'hidden') {
+            isactive = false;
+        }
+        else {
+            isactive = true;
+            document.title = 'チャット';
+        }
+    }
 
     $(function () {
         $('.main').eq(0).hide();
