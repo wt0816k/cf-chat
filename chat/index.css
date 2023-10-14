@@ -273,6 +273,8 @@ input[type="text"]:focus {
 }
 
 .users-expand {
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
