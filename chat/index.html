@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="main">
-        <button id="message-update">更新</button>
+        <button id="message-stop">受信を停止</button>
         <main class="message-area">
             <div id="message-data">
             </div>
@@ -75,6 +75,8 @@
     var id = '';
     var token = '';
     var username = '';
+
+    var timerId = '';
 
     function getCookieArray() {
         var arr = new Array();
@@ -172,7 +174,7 @@
         token = _token;
         username = _username;
 
-        setInterval(function () {
+        timerId = setInterval(function () {
             getMessage();
         }, 2000);
     })
@@ -207,8 +209,8 @@
         $('#message-input').val('');
     })
 
-    $('#message-update').on('click', function () {
-        getMessage();
+    $('#message-stop').on('click', function () {
+        clearInterval(timerId);
     })
 
     $(function () {
