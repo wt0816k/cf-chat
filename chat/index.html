@@ -170,6 +170,7 @@
 
     $('#run-logout').on('click', function () {
         document.cookie = "logininfo=; max-age=0";
+        location.reload();
     })
 
     $('#send').on('click', function () {
