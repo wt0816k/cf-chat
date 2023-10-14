@@ -269,18 +269,20 @@
     })
 
     document.onvisibilitychange = function () {
-        if (document.visibilityState === 'hidden') {
-            isactive = false;
-            sendOnlineStatus('offline');
-        }
-        else {
-            isactive = true;
-            sendOnlineStatus('online');
-            $('#favicon').href = './favicon-normal.png';
-            document.title = 'チャット';
-        }
+        if (islogin) {
+            if (document.visibilityState === 'hidden') {
+                isactive = false;
+                sendOnlineStatus('offline');
+            }
+            else {
+                isactive = true;
+                sendOnlineStatus('online');
+                $('#favicon').href = './favicon-normal.png';
+                document.title = 'チャット';
+            }
 
-        getOnlineStatus();
+            getOnlineStatus();
+        }
     }
 
     function sendOnlineStatus(status) {
