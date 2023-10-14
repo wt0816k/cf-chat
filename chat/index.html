@@ -163,7 +163,7 @@
                 $('.login-error').eq(0).show();
                 return;
             }
-            
+
             writeLoginInfo(_id, _token, _username);
         }
 
@@ -186,6 +186,13 @@
 
     $('#send').on('click', function () {
         const message = $('#message-input').val();
+
+        if (message === '') {
+            $('#message-input').addClass('shake');
+            setTimeout(function () {
+                $('#message-input').removeClass('shake');
+            }, 1000);
+        }
         const date = new Intl.DateTimeFormat("ja-jp", {
             year: "numeric",
             month: "2-digit",

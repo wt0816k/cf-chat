@@ -197,8 +197,22 @@ input[type="text"]:focus {
 
 .message-data-timestamp {
     color: #8d8d8d;
+    font-size: 16px;
 }
 
 .message-data-username {
     font-weight: 600;
+}
+
+.shake {
+    display: inline-block;
+    animation: shake-effect .1s 8;
+}
+
+@keyframes shake-effect {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
