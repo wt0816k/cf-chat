@@ -200,11 +200,11 @@
         if (loadLoginInfo()) {
             $('.login-input-dialog').hide();
             $('.login-confirm-dialog').show();
-            $('#run-logout').hide();
+            $('#run-logout').show();
         } else {
             $('.login-input-dialog').show();
             $('.login-confirm-dialog').hide();
-            $('#run-logout').show();
+            $('#run-logout').hide();
             console.log('[Infomation] No login information is available.')
         }
     })
