@@ -244,7 +244,6 @@
     })
 
     document.onvisibilitychange = function () {
-
         if (document.visibilityState === 'hidden') {
             isactive = false;
             sendOnlineStatus('offline');
@@ -254,6 +253,8 @@
             sendOnlineStatus('online');
             document.title = 'チャット';
         }
+
+        getOnlineStatus();
     }
 
     function sendOnlineStatus(status) {
