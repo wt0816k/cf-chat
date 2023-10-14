@@ -148,6 +148,7 @@ footer>div {
     box-sizing: border-box;
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     z-index: 2;
+    transition-duration: 0.2s;
 }
 
 input[type="text"]:focus {
@@ -207,12 +208,13 @@ input[type="text"]:focus {
 .shake {
     display: inline-block;
     animation: shake-effect .1s 6;
+    transition-duration: 0.2s;
 }
 
 @keyframes shake-effect {
     0% {transform: translate(0px, 0px) rotateZ(0deg)}
-    25% {transform: translate(1px, 1px) rotateZ(1deg)}
+    25% {transform: translate(1px, 1px) rotateZ(0.5deg)}
     50% {transform: translate(0px, 1px) rotateZ(0deg)}
-    75% {transform: translate(1px, 0px) rotateZ(-1deg)}
+    75% {transform: translate(1px, 0px) rotateZ(-0.5deg)}
     100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
