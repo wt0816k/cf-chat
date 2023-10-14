@@ -72,7 +72,7 @@
     </div>
 </body>
 <script>
-    var logininfo = false;
+    var islogin = false;
     var id = '';
     var token = '';
     var username = '';
@@ -169,7 +169,7 @@
         const _token = $('#login-token').val();
         const _username = $('#login-username').val();
 
-        if (!logininfo) {
+        if (!islogin) {
             if (_id === '' || _token === '' || _username === '') {
                 $('.login-error').eq(0).show();
                 return;
@@ -267,8 +267,8 @@
     $(function () {
         $('.main').eq(0).hide();
 
-        logininfo = loadLoginInfo();
-        if (logininfo) {
+        islogin = loadLoginInfo();
+        if (islogin) {
             $('.login-input-dialog').hide();
             $('.login-confirm-dialog').show();
             $('#run-logout').show();
