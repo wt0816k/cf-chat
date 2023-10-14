@@ -140,7 +140,9 @@
         token = _token;
         username = _username;
 
-        getMessage();
+        setInterval(function () {
+            getMessage();
+        }, 2000);
     })
 
     $('#send').on('click', function () {
@@ -164,8 +166,6 @@
             "body": JSON.stringify(json)
         };
         fetch(url, params);
-
-        getMessage();
     })
 
     $('#message-update').on('click', function () {
@@ -176,9 +176,7 @@
         $('.main').eq(0).hide();
 
         if (loadLoginInfo()) {
-            setInterval(function () {
-                getMessage();
-            }, 2000);
+
         } else {
             console.log('[Infomation] No login information is available.')
         }
