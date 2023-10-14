@@ -18,20 +18,34 @@
                 <div class="modal__content">
                     <h1>ログイン</h1>
                     <div class="modal__items">
-                        <div class="modal__item">
-                            <a class="modal__item_text">ID</a>
-                            <input type="text" id="login-id">
+                        <div class="login-input-dialog">
+                            <div class="modal__item">
+                                <a class="modal__item_text">ID</a>
+                                <input type="text" id="login-id">
+                            </div>
+                            <div class="modal__item">
+                                <a class="modal__item_text">認証鍵</a>
+                                <input type="password" id="login-token">
+                            </div>
+                            <div class="modal__item">
+                                <a class="modal__item_text">ニックネーム</a>
+                                <input type="text" id="login-username">
+                            </div>
+                            <a class="login-error">未入力の項目があります。</a>
                         </div>
-                        <div class="modal__item">
-                            <a class="modal__item_text">認証鍵</a>
-                            <input type="password" id="login-token">
+                        <div class="login-confirm-dialog">
+                            <p>前回のログイン情報で続行しますか？</p>
+                            <div class="modal__item">
+                                <a class="modal__item_text">ID</a>
+                                <a id="saved-login-id"></a>
+                            </div>
+                            <div class="modal__item">
+                                <a class="modal__item_text">ニックネーム</a>
+                                <a id="saved-login-username"></a>
+                            </div>
                         </div>
-                        <div class="modal__item">
-                            <a class="modal__item_text">ニックネーム</a>
-                            <input type="text" id="login-username">
-                        </div>
-                        <a class="login-error">未入力の項目があります。</a>
                     </div>
+                    <button id="run-logout">ログアウト</button>
                     <button id="run-login">OK</button>
                 </div>
             </div>
@@ -72,7 +86,7 @@
         if (arr['logininfo'] === undefined) {
             return false;
         } else {
-            const logininfo = JSON.parse(btoa(arr['logininfo']));
+            const logininfo = JSON.parse(arr['logininfo']);
             id = logininfo.id;
             token = logininfo.token;
             username = logininfo.username;
@@ -143,6 +157,10 @@
         setInterval(function () {
             getMessage();
         }, 2000);
+    })
+
+    $('#run-logout').on('click', function () {
+        document.cookie = "logininfo=; max-age=0";
     })
 
     $('#send').on('click', function () {

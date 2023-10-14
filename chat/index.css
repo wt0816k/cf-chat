@@ -83,21 +83,32 @@ body {
     font-size: 16px;
 }
 
-#run-login {
-    font-family: 'Noto Sans', sans-serif;
+.modal__content > button {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-size: 16px;
     padding: 12px;
     padding-left: 32px;
     padding-right: 32px;
     border: none;
     border-radius: 1000px;
-    background: #77dff7;
     cursor: pointer;
     transition-duration: 0.21s;
 }
 
+#run-login {
+    background: #77dff7;
+}
+
 #run-login:hover {
     background: #4bd6f5;
+}
+
+#run-logout {
+    background: #f77777;
+}
+
+#run-logout:hover {
+    background: #f54b4b;
 }
 
 footer {
