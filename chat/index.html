@@ -194,9 +194,9 @@
         const message = $('#message-input').val();
 
         if (message === '') {
-            $('#message-input').addClass('shake');
+            $('.input-area').eq(0).addClass('shake');
             setTimeout(function () {
-                $('#message-input').removeClass('shake');
+                $('.input-area').eq(0).removeClass('shake');
             }, 1000);
         }
         const date = new Intl.DateTimeFormat("ja-jp", {
