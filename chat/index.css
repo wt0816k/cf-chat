@@ -138,6 +138,8 @@ footer>div {
     position: absolute;
     margin: 6px;
     padding: 12px;
+    padding-left: 16px;
+    padding-right: 76px;
     font-size: 16px;
     background: #ebebeb;
     border: 1px solid #3f3f3f;
