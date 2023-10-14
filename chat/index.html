@@ -141,7 +141,7 @@
             'username': _username
         }
 
-        document.cookie = 'logininfo=' + JSON.stringify(json);
+        document.cookie = 'logininfo=' + JSON.stringify(json) + '; expires=2024-10-15';
     }
 
     async function getMessage() {
