@@ -274,7 +274,7 @@
         const url = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec?';
         const json = { id: id, token: token };
         const query = new URLSearchParams(json);
-        url += params;
+        url += query;
 
         fetch(url)
             .then(function (data) {
