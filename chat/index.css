@@ -187,3 +187,7 @@ input[type="text"]:focus {
 .message-data-timestamp {
     color: #8d8d8d;
 }
+
+.message-data-username {
+    font-weight: 600;
+}
