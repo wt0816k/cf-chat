@@ -157,13 +157,13 @@
         const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const json = { id: id, token: token, timestamp: date, username: username, message: message };
 
-        const headers = {
+        const params = {
             "method": "POST",
             "mode": "no-cors",
             "Content-Type": "application/x-www-form-urlencoded",
             "body": JSON.stringify(json)
         };
-        fetch(url, postparam);
+        fetch(url, params);
 
         getMessage();
     })
