@@ -153,13 +153,16 @@
             second: "2-digit",
         }).format(new Date());
 
+        const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const json = { token: token, timestamp: date, username: username, message: message };
-        const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
-        const param = new URLSearchParams({ data: btoa(encodeURIComponent(JSON.stringify(json))) });
-        const url = gas + '?' + param;
-
+        
         const method = "POST";
-        fetch(gas + '?data=test', { method }).then((res) => res.json()).then(console.log).catch(console.error);
+        const body = JSON.stringify(json);
+        const headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        };
+        fetch(url, { method, headers, body }).then((res) => res.json()).then(console.log).catch(console.error);
 
         getMessage();
     })
