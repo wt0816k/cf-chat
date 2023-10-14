@@ -206,7 +206,7 @@ input[type="text"]:focus {
 
 .shake {
     display: inline-block;
-    animation: shake-effect .1s 8;
+    animation: shake-effect .1s 6;
 }
 
 @keyframes shake-effect {
