@@ -276,6 +276,7 @@ input[type="text"]:focus {
     width: 14px;
     height: 14px;
     border-radius: 100px;
+    margin-right: 6px;
 }
 
 .circle-online {
@@ -293,10 +294,16 @@ input[type="text"]:focus {
 
 .users-data-items {
     display: flex;
+    flex-direction: column;
+    padding: 4px;
 }
 
 .users-data-items>div {
     display: flex;
     align-items: center;
-    padding: 12px;
+}
+
+.users-data-items>a {
+    font-size: 14px;
+    color: #717171;
 }
