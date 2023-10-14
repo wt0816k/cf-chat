@@ -106,6 +106,7 @@
                 }
             })
             .then(function (json) {
+                $('#message-data').empty();
                 for (const data of json) {
                     $('#message-data').append(
                         '<div class="message-data-items">' +
