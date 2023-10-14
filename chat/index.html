@@ -201,6 +201,8 @@
             "body": JSON.stringify(json)
         };
         fetch(url, params);
+
+        $('#message-input').val('');
     })
 
     $('#message-update').on('click', function () {
