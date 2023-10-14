@@ -288,6 +288,7 @@ input[type="text"]:focus {
 
 .users-data {
     display: flex;
+    flex-direction: column;
 }
 
 .users-data-items {
