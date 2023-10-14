@@ -272,7 +272,7 @@ input[type="text"]:focus {
     background: #f7f7f7;
 }
 
-.users-area>a {
+.users-expand>a {
     margin-left: 8px;
     font-size: 16px;
 }
