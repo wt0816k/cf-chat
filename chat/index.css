@@ -83,12 +83,18 @@ body {
     font-size: 16px;
 }
 
-.modal__content > button {
+.button-grp {
+    display: flex;
+    align-items: center;
+}
+
+.button-grp > button {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    height: 48px;
     padding: 12px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 30px;
+    padding-right: 30px;
     border: none;
     border-radius: 1000px;
     cursor: pointer;
@@ -104,6 +110,8 @@ body {
 }
 
 #run-logout {
+    padding-left: 24px;
+    padding-right: 24px;
     background: #f77777;
 }
 
