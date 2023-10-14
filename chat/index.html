@@ -154,8 +154,8 @@
         }).format(new Date());
 
         const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
-        const json = { token: token, timestamp: date, username: username, message: message };
-        
+        const json = { id: id, token: token, timestamp: date, username: username, message: message };
+
         const method = "POST";
         const body = JSON.stringify(json);
         const headers = {
