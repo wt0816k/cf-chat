@@ -150,7 +150,9 @@ footer > div {
 }
 
 #send {
-    position: relative;
+    position:fixed;
+    right:6px;
+    bottom:6px;
     display: inline;
     border: none;
     color: white;
