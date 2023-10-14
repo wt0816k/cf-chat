@@ -281,6 +281,7 @@ input[type="text"]:focus {
     width: 12px;
     height: 12px;
     border-radius: 100px;
+    margin-top: 1px;
     margin-left: 6px;
     margin-right: 6px;
 }
@@ -304,6 +305,10 @@ input[type="text"]:focus {
     padding: 4px;
 }
 
+.users-data-items:hover {
+    background: #ececec;
+}
+
 .users-data-items>div {
     display: flex;
     align-items: center;
@@ -312,5 +317,5 @@ input[type="text"]:focus {
 .users-data-items>a {
     font-size: 14px;
     color: #717171;
-    margin-left: 26px;
+    margin-left: 24px;
 }
