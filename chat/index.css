@@ -132,11 +132,13 @@ footer>div {
     width: 100%;
     height: 58px;
     z-index: 1;
+    background: #ffffff;
 }
 
 #message-input {
     position: absolute;
     margin: 6px;
+    margin-top: 5px;
     padding: 12px;
     padding-left: 16px;
     padding-right: 76px;
@@ -178,10 +180,15 @@ input[type="text"]:focus {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
 }
 
+.message-area {
+    height: calc(100vh - 26px);
+}
+
 #message-data {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: calc(100% - 60px);
 }
 
 .message-data-items {
