@@ -196,6 +196,8 @@
         token = _token;
         username = _username;
 
+        getMessage();
+
         timerId = setInterval(function () {
             getMessage();
         }, 2000);
