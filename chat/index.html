@@ -69,6 +69,7 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
+    var logininfo = false;
     var id = '';
     var token = '';
     var username = '';
@@ -152,12 +153,14 @@
         const _token = $('#login-token').val();
         const _username = $('#login-username').val();
 
-        if (_id === '' || _token === '' || _username === '') {
-            $('.login-error').eq(0).show();
-            return;
+        if (!logininfo) {
+            if (_id === '' || _token === '' || _username === '') {
+                $('.login-error').eq(0).show();
+                return;
+            }
+            
+            writeLoginInfo(_id, _token, _username);
         }
-
-        writeLoginInfo(_id, _token, _username);
 
         $('#js-modal').fadeOut(140);
         $('.main').eq(0).show();
@@ -206,7 +209,8 @@
     $(function () {
         $('.main').eq(0).hide();
 
-        if (loadLoginInfo()) {
+        logininfo = loadLoginInfo();
+        if (logininfo) {
             $('.login-input-dialog').hide();
             $('.login-confirm-dialog').show();
             $('#run-logout').show();
