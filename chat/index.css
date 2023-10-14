@@ -209,9 +209,9 @@ input[type="text"]:focus {
 }
 
 .message-data-items {
-    margin-top: 3px;
-    margin-bottom: 3px;
-    transition-duration: 0.1s;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    transition-duration: 0.08s;
 }
 
 .message-data-items:hover {
