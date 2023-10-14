@@ -176,7 +176,9 @@
         $('.main').eq(0).hide();
 
         if (loadLoginInfo()) {
-            getMessage();
+            setInterval(function () {
+                getMessage();
+            }, 2000);
         } else {
             console.log('[Infomation] No login information is available.')
         }
