@@ -303,6 +303,7 @@ input[type="text"]:focus {
     display: flex;
     flex-direction: column;
     padding: 4px;
+    transition-duration: 0.1s;
 }
 
 .users-data-items:hover {
@@ -317,5 +318,5 @@ input[type="text"]:focus {
 .users-data-items>a {
     font-size: 14px;
     color: #717171;
-    margin-left: 24px;
+    margin-left: 23px;
 }
