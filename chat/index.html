@@ -147,10 +147,9 @@
                         '</div>'
                     );
                 }
-                
-                var element = document.documentElement;
-                var bottom = element.scrollHeight - element.clientHeight;
-                window.scroll(0, bottom);
+
+                const itemtop = $('.message-data-items').eq($(this).length).offset().top;
+                $("html").animate({scrollTop: itemtop});
 
                 console.log('[Information] Message has been updated.');
                 return json;
