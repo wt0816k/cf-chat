@@ -246,3 +246,7 @@ input[type="text"]:focus {
     75% {transform: translate(1px, 0px) rotateZ(-0.5deg)}
     100% {transform: translate(0px, 0px) rotateZ(0deg)}
 }
+
+.main>main {
+    display: flex;
+}
