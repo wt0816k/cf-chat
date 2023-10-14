@@ -278,8 +278,8 @@ input[type="text"]:focus {
 
 .circle-online, .circle-offline {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border-radius: 100px;
     margin-left: 6px;
     margin-right: 6px;
@@ -312,5 +312,5 @@ input[type="text"]:focus {
 .users-data-items>a {
     font-size: 14px;
     color: #717171;
-    margin-left: 20px;
+    margin-left: 26px;
 }
