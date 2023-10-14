@@ -241,11 +241,25 @@ input[type="text"]:focus {
 }
 
 @keyframes shake-effect {
-    0% {transform: translate(0px, 0px) rotateZ(0deg)}
-    25% {transform: translate(1px, 1px) rotateZ(0.5deg)}
-    50% {transform: translate(0px, 1px) rotateZ(0deg)}
-    75% {transform: translate(1px, 0px) rotateZ(-0.5deg)}
-    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+    0% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+
+    25% {
+        transform: translate(1px, 1px) rotateZ(0.5deg)
+    }
+
+    50% {
+        transform: translate(0px, 1px) rotateZ(0deg)
+    }
+
+    75% {
+        transform: translate(1px, 0px) rotateZ(-0.5deg)
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
 }
 
 .main>main {
@@ -255,4 +269,20 @@ input[type="text"]:focus {
 .users-area {
     width: 210px;
     background: #f7f7f7;
+}
+
+.circle-online {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background: #00bb1f;
+}
+
+.circle-offline {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background: #8a8a8a;
 }
