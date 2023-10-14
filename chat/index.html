@@ -94,6 +94,9 @@
             id = logininfo.id;
             token = logininfo.token;
             username = logininfo.username;
+
+            $('#saved-login-id').text(id);
+            $('#saved-login-username').text(username);
             return true;
         }
     }
