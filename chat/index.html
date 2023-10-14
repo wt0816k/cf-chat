@@ -148,6 +148,12 @@
                     );
                 }
 
+                window.scrollBy({
+                    x: 0,
+                    y: 200,
+                    behavior: 'smooth'
+                })
+
                 console.log('[Information] Message has been updated.');
                 return json;
             });
@@ -185,7 +191,7 @@
     })
 
     $('#message-input').on('keydown', function (e) {
-        if( e.keyCode === 13 ){
+        if (e.keyCode === 13) {
             $('#send').click();
         }
     })
