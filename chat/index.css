@@ -41,7 +41,7 @@ body {
     display: inline-block;
 }
 
-.modal__content > h1 {
+.modal__content>h1 {
     font-size: 24px;
 }
 
@@ -60,12 +60,12 @@ body {
     margin-bottom: 8px;
 }
 
-.modal__item > a {
+.modal__item>a {
     font-size: 18px;
     margin-right: 20px;
 }
 
-.modal__item > input {
+.modal__item>input {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-size: 17px;
     padding: 8px;
@@ -89,7 +89,7 @@ body {
     justify-content: center;
 }
 
-.button-grp > button {
+.button-grp>button {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     font-size: 16px;
     height: 48px;
@@ -127,7 +127,7 @@ footer {
     width: 100%;
 }
 
-footer > div {
+footer>div {
     position: relative;
     background: #a7baf8;
     width: 100%;
@@ -150,11 +150,13 @@ footer > div {
 }
 
 #send {
-    position:fixed;
-    right:6px;
-    bottom:6px;
     display: inline;
+    position: fixed;
+    right: 6px;
+    bottom: 6px;
+    height: 46px;
     border: none;
+    border-radius: 100px;
     color: white;
     background: #1a69b3;
     font-size: 16px;
@@ -162,6 +164,7 @@ footer > div {
     padding-left: 22px;
     padding-right: 22px;
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    cursor: pointer;
     z-index: 3;
 }
 
