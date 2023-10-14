@@ -161,8 +161,8 @@ footer>div {
     background: #1a69b3;
     font-size: 16px;
     white-space: nowrap;
-    padding-left: 22px;
-    padding-right: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     cursor: pointer;
     z-index: 3;
