@@ -17,8 +17,8 @@
             <div class="modal__inner">
                 <div class="modal__content">
                     <h1>ログイン</h1>
-                    <div class="modal__items">
-                        <div class="login-input-dialog">
+                    <div class="login-input-dialog">
+                        <div class="modal__items">
                             <div class="modal__item">
                                 <a class="modal__item_text">ID</a>
                                 <input type="text" id="login-id">
@@ -31,10 +31,12 @@
                                 <a class="modal__item_text">ニックネーム</a>
                                 <input type="text" id="login-username">
                             </div>
-                            <a class="login-error">未入力の項目があります。</a>
                         </div>
-                        <div class="login-confirm-dialog">
-                            <p>前回のログイン情報で続行しますか？</p>
+                        <a class="login-error">未入力の項目があります。</a>
+                    </div>
+                    <div class="login-confirm-dialog">
+                        <p>前回のログイン情報で続行しますか？</p>
+                        <div class="modal__items">
                             <div class="modal__item">
                                 <a class="modal__item_text">ID</a>
                                 <a id="saved-login-id"></a>
