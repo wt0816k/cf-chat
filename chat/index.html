@@ -196,11 +196,13 @@
         $('.main').eq(0).hide();
 
         if (loadLoginInfo()) {
-            $('#login-input-dialog').hide();
-            $('#login-confirm-dialog').show();
+            $('.login-input-dialog').hide();
+            $('.login-confirm-dialog').show();
+            $('#run-logout').show();
         } else {
-            $('#login-input-dialog').show();
-            $('#login-confirm-dialog').hide();
+            $('.login-input-dialog').show();
+            $('.login-confirm-dialog').hide();
+            $('#run-logout').show();
             console.log('[Infomation] No login information is available.')
         }
     })
