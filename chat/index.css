@@ -184,7 +184,8 @@ input[type="text"]:focus {
 }
 
 .message-data-items {
-    margin: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 .message-data-item {
