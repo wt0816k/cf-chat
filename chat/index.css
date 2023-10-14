@@ -273,8 +273,8 @@ input[type="text"]:focus {
 
 .circle-online, .circle-offline {
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border-radius: 100px;
 }
 
@@ -284,4 +284,18 @@ input[type="text"]:focus {
 
 .circle-offline {
     background: #8a8a8a;
+}
+
+.users-data {
+    display: flex;
+}
+
+.users-data-items {
+    display: flex;
+}
+
+.users-data-items>div {
+    display: flex;
+    align-items: center;
+    padding: 12px;
 }
