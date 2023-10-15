@@ -357,8 +357,9 @@
                     if (status == 'online') {
                         latest = 'オンライン中';
                     } else if (status == 'offline') {
-                        var latest_date = (latestonline.substr(0, 10)).replace(/-/g, '/');;
-                        var latest_time = new Date(latestonline).getHours() + ':' + new Date(latestonline).getMinutes(); 
+                        const date = new Date(latestonline);
+                        var latest_date = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay();
+                        var latest_time = date.getHours() + ':' + date.getMinutes(); 
 
                         console.log('now: ' + now_time);
                         console.log('latest: ' + latestonline);
