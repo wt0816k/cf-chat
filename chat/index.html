@@ -338,9 +338,9 @@
             })
             .then(function (json) {
                 for (const data of json) {
-                    const status = json.status;
-                    const username = json.username;
-                    const latestonline = json.latestonline;
+                    const status = data.status;
+                    const username = data.username;
+                    const latestonline = data.latestonline;
 
                     const now_date = new Intl.DateTimeFormat("ja-jp", {
                         year: "numeric",
