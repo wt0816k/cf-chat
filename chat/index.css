@@ -237,6 +237,12 @@ input[type="text"]:focus {
     font-weight: 600;
 }
 
+.message-data-link {
+    color: #0000EE;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .shake {
     display: inline-block;
     animation: shake-effect .12s 6;

@@ -155,6 +155,14 @@
         document.cookie = 'logininfo=' + JSON.stringify(json) + ';max-age=31536000';
     }
 
+    function isValidUrl(string) {
+        try {
+            new URL(string); return true;
+        } catch (err) {
+            return false;
+        }
+    }
+
     async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 50;
@@ -175,12 +183,17 @@
                 } else {
                     $('#message-data').empty();
                     for (const data of json) {
+                        var classname = '';
+                        if (isValidUrl(data.message)) {
+                            classname = ' message-data-link';
+                        }
+
                         $('#message-data').append(
                             '<div class="message-data-items">' +
                             //'<span class="message-data-item message-data-id">' + data.id + '</span>' +
                             '<span class="message-data-item message-data-timestamp">' + data.timestamp + '</span>' +
                             '<span class="message-data-item message-data-username">' + data.username + '</span>' +
-                            '<span class="message-data-item message-data-message">' + data.message + '</span>' +
+                            '<span class="message-data-item message-data-message' + classname + '">' + data.message + '</span>' +
                             '</div>'
                         );
                     }
