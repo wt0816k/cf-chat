@@ -4,6 +4,18 @@ body {
     padding: 0px;
 }
 
+:root {
+    --color-users-backgroud: #f7f7f7;
+    --color-users-online: #00bb1f;
+    --color-users-offline: #b9b9b9;
+    --color-message-background: #ffffff;
+    --color-message-text: #000000;
+    --color-message-timestamp: #8d8d8d;
+    --color-message-link: #0000ee;
+
+    --color-expand-arrow: #858585;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -229,7 +241,7 @@ input[type="text"]:focus {
 }
 
 .message-data-timestamp {
-    color: #8d8d8d;
+    color: var(--color-message-timestamp);
     font-size: 16px;
 }
 
@@ -238,7 +250,7 @@ input[type="text"]:focus {
 }
 
 .message-data-link {
-    color: #0000EE;
+    color: var(--color-message-link);
     text-decoration: underline;
     cursor: pointer;
 }
@@ -276,7 +288,7 @@ input[type="text"]:focus {
 
 .users-area {
     width: 210px;
-    background: #f7f7f7;
+    background: var(--color-users-backgroud);
 }
 
 .expand-button {
@@ -291,11 +303,12 @@ input[type="text"]:focus {
 }
 
 .expand-button>a {
-    color: #858585;
+    color: var(--color-expand-arrow);
     font-size: 14px;
 }
 
-.circle-online, .circle-offline {
+.circle-online,
+.circle-offline {
     display: inline-block;
     width: 12px;
     height: 12px;
