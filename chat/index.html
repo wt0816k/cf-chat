@@ -669,9 +669,8 @@
     $(window).on('online', function () {
         $('#offline-message').animate({
             bottom: '-140px'
-        }), function () {
-            $('#offline-message').hide();
-        }
+        });
+        $('#offline-message').hide();
     });
 
     $(window).on('offline', function () {
@@ -695,7 +694,7 @@
             $('#run-logout').hide();
             console.log('[Information] No login information is available.')
         }
-        
+
         $('#offline-message').hide();
     })
 </script>
