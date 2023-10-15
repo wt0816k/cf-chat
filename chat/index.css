@@ -276,10 +276,11 @@ input[type="text"]:focus {
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition-duration: 0.17s;
 }
 
 .users-expand:hover {
-    background: #c2c2c2;
+    background: #d6d6d6;
 }
 
 .users-expand>a {
