@@ -210,6 +210,8 @@ input[type="text"]:focus {
 }
 
 .message-data-items {
+    display: flex;
+    align-items: baseline;
     padding-top: 3px;
     padding-bottom: 3px;
     transition-duration: 0.08s;
