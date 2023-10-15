@@ -62,8 +62,8 @@
         <main>
             <div>
                 <div class="users-area">
-                    <div class="expand-button users-expand">
-                        <svg id="arrow-up" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                    <div class="expand-button" id="users-expand">
+                        <svg id="users-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -73,7 +73,7 @@
                                     fill="#858585"></path>
                             </g>
                         </svg>
-                        <svg id="arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
+                        <svg id="users-arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -88,8 +88,8 @@
                     <div id="users-data">
                     </div>
                     <div class="option-area">
-                        <div class="expand-button option-expand">
-                            <svg id="arrow-up" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                        <div class="expand-button" id="option-expand">
+                            <svg id="option-arrow-up" width="24px" height="24px" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -99,7 +99,7 @@
                                         fill="#858585"></path>
                                 </g>
                             </svg>
-                            <svg id="arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
+                            <svg id="option-arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -604,17 +604,17 @@
         }
     };
 
-    $('.users-expand').eq(0).on('click', function () {
+    $('#users-expand').eq(0).on('click', function () {
         if (!users_expanded) {
             $('#users-data').slideDown('400ms', function () {
-                $('#arrow-up').show();
-                $('#arrow-down').hide();
+                $('#users-arrow-up').show();
+                $('#users-arrow-down').hide();
             });
         }
         else {
             $('#users-data').slideUp('400ms', function () {
-                $('#arrow-up').hide();
-                $('#arrow-down').show();
+                $('#users-arrow-up').hide();
+                $('#users-arrow-down').show();
             });
         }
 
