@@ -274,13 +274,21 @@
         getMessage();
         getOnlineStatus();
 
-        timerId = setInterval(function () {
+        const tid_1 = setInterval(function () {
             getMessage();
         }, 2000);
 
-        var id = setInterval(function () {
+        const tid_2 = setInterval(function () {
             getOnlineStatus();
         }, 12000)
+
+        const tid_3 = setInterval(function () {
+            if (isactive) {
+                sendOnlineStatus(online)
+            }
+        }, 30000)
+
+        timerId = tid_1;
     })
 
     $('#run-logout').on('click', function () {
