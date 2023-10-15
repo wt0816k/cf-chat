@@ -312,6 +312,7 @@ input[type="text"]:focus {
     flex-direction: column;
     padding: 4px;
     transition-duration: 0.1s;
+    cursor: default;
 }
 
 .users-data-items:hover {
