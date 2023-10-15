@@ -640,8 +640,8 @@
         option_expanded = !option_expanded;
     })
 
-    $('#highlight-mymessage').on('checked', function () {
-        if ($('#highlight-mymessage').checked) {
+    $('#highlight-mymessage').on('click', function () {
+        if ($('#highlight-mymessage').val()) {
             $('.message-data-my').each(function (elem) {
                 elem.css('background', '#b3e6ff');
             })
