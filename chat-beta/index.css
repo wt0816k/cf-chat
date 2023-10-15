@@ -380,5 +380,6 @@ input[type="text"]:focus {
 }
 
 #offline-message>a {
+    color: #fff;
     font-size: 14px;
 }
