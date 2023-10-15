@@ -333,7 +333,7 @@
                 $('#users-data').empty();
                 for (const data of json) {
                     const status = data.status;
-                    const username = data.username;
+                    const _username = data.username;
                     const latestonline = data.latestonline;
 
                     const now_date = new Intl.DateTimeFormat("ja-jp", {
@@ -357,20 +357,24 @@
                     if (status == 'online') {
                         latest = 'オンライン中';
                     } else if (status == 'offline') {
-                        var latest_date = new Intl.DateTimeFormat("ja-jp", {
-                            year: "numeric",
-                            month: "2-digit",
-                            day: "2-digit",
-                        }).format(new Date(latestonline));
-                        var latest_time = new Intl.DateTimeFormat("ja-jp", {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                        }).format(new Date(latestonline));
-
-                        if (latest_date != now_date) {
-                            latest = 'オフライン'
+                        if (_username == username) {
+                            latest = 'オンライン中';
                         } else {
-                            latest = timeMath.sub(now_time + ':00', latest_time + ':00');
+                            var latest_date = new Intl.DateTimeFormat("ja-jp", {
+                                year: "numeric",
+                                month: "2-digit",
+                                day: "2-digit",
+                            }).format(new Date(latestonline));
+                            var latest_time = new Intl.DateTimeFormat("ja-jp", {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                            }).format(new Date(latestonline));
+
+                            if (latest_date != now_date) {
+                                latest = 'オフライン'
+                            } else {
+                                latest = timeMath.sub(now_time + ':00', latest_time + ':00');
+                            }
                         }
                     }
 
@@ -378,7 +382,7 @@
                         '<div class="users-data-items">' +
                         '<div>' +
                         '<div class="' + icon + '"></div>' +
-                        '<span>' + username + '</span>' +
+                        '<span>' + _username + '</span>' +
                         '</div>' +
                         '<a>' + latest + '</a>' +
                         '</div>'
