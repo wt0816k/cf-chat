@@ -122,6 +122,9 @@
                 <div id="message-data">
                 </div>
             </div>
+            <div id="offline-message">
+                <a>現在、オフラインです。再接続しています...</a>
+            </div>
         </main>
         <footer class="input-area">
             <div>
@@ -661,6 +664,18 @@
 
     $(window).on('beforeunload', function () {
         sendOnlineStatus('offline');
+    });
+
+    $(window).on('online', function () {
+        $('#offline-message').animate({
+			bottom: '-100px'
+		});
+    });
+
+    $(window).on('offline', function () {
+        $('#offline-message').animate({
+			bottom: '68px'
+		});
     });
 
     $(function () {
