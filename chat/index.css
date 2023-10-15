@@ -197,14 +197,19 @@ input[type="text"]:focus {
     border: none;
     border-radius: 100px;
     color: white;
-    background: #1a69b3;
+    background: #175eb9;
     font-size: 16px;
     white-space: nowrap;
     padding-left: 16px;
     padding-right: 16px;
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
     cursor: pointer;
+    transition-duration: 0.2s;
     z-index: 3;
+}
+
+#send:hover {
+    background: #227aeb;
 }
 
 .main {
