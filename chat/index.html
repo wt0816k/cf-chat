@@ -230,9 +230,9 @@
             getMessage();
         }, 2000);
 
-        setInterval(function () {
+        var id = setInterval(function () {
             getOnlineStatus();
-        }, 10000)
+        }, 12000)
     })
 
     $('#run-logout').on('click', function () {
@@ -338,7 +338,7 @@
                 //} else {
                 //    oldjson_users = json;
                 //}
-                
+
                 $('#users-data').empty();
                 for (const data of json) {
                     const status = data.status;
