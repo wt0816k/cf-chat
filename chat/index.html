@@ -358,7 +358,6 @@
                     const now_time = new Intl.DateTimeFormat("ja-jp", {
                         hour: "2-digit",
                         minute: "2-digit",
-                        second: "2-digit",
                     }).format(new Date());
 
                     var icon = '';
@@ -373,7 +372,9 @@
                         latest = 'オンライン中';
                     } else if (status == 'offline') {
                         var latest_date = latestonline.substr(0, 10);
-                        var latest_time = latestonline.substr(11);
+                        var latest_time = latestonline.substr(11, 15);
+                        console.log(latest_date);
+                        console.log(now_date);
                         if (latest_date == now_date) {
                             latest = 'オフライン'
                         } else {
@@ -391,7 +392,6 @@
                         '</div>'
                     );
                 }
-                console.log(json);
             })
     }
 
