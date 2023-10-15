@@ -370,7 +370,7 @@ input[type="text"]:focus {
 
 #offline-message {
     position: absolute;
-    bottom: -100px;
+    bottom: -140px;
     left: 12px;
     display: flex;
     align-items: center;
