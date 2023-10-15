@@ -369,6 +369,9 @@ input[type="text"]:focus {
 }
 
 .offline-message {
+    position: absolute;
+    bottom: 40px;
+    right: 8px;
     display: flex;
     align-items: center;
     padding: 8px;
