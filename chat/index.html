@@ -384,7 +384,9 @@
                                 const s = time[2];
 
                                 if (h == 0) {
-                                    latest = m + '分前にオンライン';
+                                    if (m.charAt(0) == '0') {
+                                        latest = m.charAt(1) + '分前にオンライン';
+                                    }
                                 } else {
                                     latest = h + '時間前にオンライン';
                                 }
