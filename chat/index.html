@@ -642,8 +642,8 @@
 
     $('#highlight-mymessage').on('click', function () {
         if ($('#highlight-mymessage').val()) {
-            $('.message-data-my').each(function (elem) {
-                elem.css('background', '#b3e6ff');
+            $('.message-data-my').each(function () {
+                $(this).css('background', '#b3e6ff');
             })
         }
     })
