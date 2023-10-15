@@ -340,3 +340,7 @@ input[type="text"]:focus {
     color: #717171;
     margin-left: 23px;
 }
+
+.left-area {
+    background: #f7f7f7;
+}
