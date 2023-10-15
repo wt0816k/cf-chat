@@ -309,7 +309,9 @@
                 document.title = 'チャット';
             }
 
-            getOnlineStatus();
+            setTimeout(function () {
+                getOnlineStatus();
+            }, 1500);
         }
     }
 
