@@ -1,0 +1,377 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --color-users-backgroud: #f7f7f7;
+    --color-users-online: #00bb1f;
+    --color-users-offline: #b9b9b9;
+
+    --color-message-background: #ffffff;
+    --color-message-text: #000000;
+    --color-message-text-highlight: #b3e6ff;
+    --color-message-timestamp: #8d8d8d;
+    --color-message-link: #0000ee;
+
+    --color-expand-arrow: #858585;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: #00000017;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a7a7a7;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #717171;
+}
+
+.layer {
+    background: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 460px;
+}
+
+.modal__inner {
+    margin-top: 125px;
+    margin-bottom: 125px;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    box-shadow: 0px 0px 12px 4px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    display: block;
+    padding: 21px 8px 21px;
+    height: auto;
+}
+
+.modal__content {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: inline-block;
+}
+
+.modal__content>h1 {
+    font-size: 24px;
+}
+
+.modal__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 38px;
+    margin-bottom: 10px;
+}
+
+.modal__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.modal__item>a {
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.modal__item>input {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 17px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #ededed;
+}
+
+.login-error {
+    display: none;
+    color: #c50909;
+    font-size: 16px;
+}
+
+.button-grp {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-grp>button {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    height: 48px;
+    padding: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    transition-duration: 0.21s;
+}
+
+#run-login {
+    background: #77dff7;
+}
+
+#run-login:hover {
+    background: #4bd6f5;
+}
+
+#run-logout {
+    margin-right: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: #f77777;
+}
+
+#run-logout:hover {
+    background: #f54b4b;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>div {
+    position: relative;
+    width: 100%;
+    height: 58px;
+    z-index: 1;
+    background: #ffffff;
+}
+
+#message-input {
+    position: absolute;
+    margin: 6px;
+    margin-top: 5px;
+    padding: 12px;
+    padding-left: 16px;
+    padding-right: 76px;
+    font-size: 16px;
+    background: #ebebeb;
+    border: 1px solid #979797;
+    border-radius: 100px;
+    width: calc(100% - 12px);
+    box-sizing: border-box;
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+
+#send {
+    display: inline;
+    position: fixed;
+    right: 11px;
+    bottom: 9px;
+    height: 40px;
+    border: none;
+    border-radius: 100px;
+    color: white;
+    background: #1a69b3;
+    font-size: 16px;
+    white-space: nowrap;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.main {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+
+.message-area {
+    width: calc(100vw - 210px);
+    height: calc(100vh - 26px);
+    background: var(--color-message-background);
+}
+
+#message-data {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 32px);
+    overflow: hidden scroll;
+    background: var(--color-message-background);
+}
+
+.message-data-items {
+    display: flex;
+    align-items: baseline;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    transition-duration: 0.08s;
+    cursor: default;
+    background: var(--color-message-background);
+}
+
+.message-data-items:hover {
+    background: #ebebeb;
+}
+
+.message-data-item {
+    font-size: 18px;
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.message-data-timestamp {
+    color: var(--color-message-timestamp);
+    font-size: 16px;
+}
+
+.message-data-username {
+    font-weight: 600;
+}
+
+.message-data-link {
+    color: var(--color-message-link);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.shake {
+    display: inline-block;
+    animation: shake-effect .12s 6;
+}
+
+@keyframes shake-effect {
+    0% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+
+    25% {
+        transform: translate(1px, 1px) rotateZ(0.5deg)
+    }
+
+    50% {
+        transform: translate(0px, 1px) rotateZ(0deg)
+    }
+
+    75% {
+        transform: translate(1px, 0px) rotateZ(-0.5deg)
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotateZ(0deg)
+    }
+}
+
+.main>main {
+    display: flex;
+}
+
+.users-area {
+    width: 210px;
+    background: var(--color-users-backgroud);
+}
+
+.expand-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: 0.17s;
+}
+
+.expand-button:hover {
+    background: #d6d6d6;
+}
+
+.expand-button>a {
+    color: var(--color-expand-arrow);
+    font-size: 14px;
+}
+
+.circle-online,
+.circle-offline {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100px;
+    margin-top: 1px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.circle-online {
+    background: #00bb1f;
+}
+
+.circle-offline {
+    background: #b9b9b9;
+}
+
+#users-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.users-data-items {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    transition-duration: 0.1s;
+    cursor: default;
+}
+
+.users-data-items:hover {
+    background: #ececec;
+}
+
+.users-data-items>div {
+    display: flex;
+    align-items: center;
+}
+
+.users-data-items>a {
+    font-size: 14px;
+    color: #717171;
+    margin-left: 23px;
+}
+
+.left-area {
+    background: var(--color-users-backgroud);
+}
+
+#option-data>a {
+    font-size: 14px;
+    color: #5f5f5f;
+}
+
+.offline-message {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: #000000;
+    box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, .14), 0px 1px 18px 0px rgba(0, 0, 0, .12), 0px 3px 5px -1px rgba(0, 0, 0, .2);
+}
