@@ -362,6 +362,7 @@
                     } else if (status == 'offline') {
                         if (_username == username) {
                             latest = 'オンライン中';
+                            icon = 'circle-online';
                         } else {
                             var latest_date = new Intl.DateTimeFormat("ja-jp", {
                                 year: "numeric",
@@ -376,7 +377,17 @@
                             if (latest_date != now_date) {
                                 latest = 'オフライン'
                             } else {
-                                latest = timeMath.sub(now_time + ':00', latest_time + ':00');
+                                var _time = timeMath.sub(now_time + ':00', latest_time + ':00');
+                                const time = _time.split(':');
+                                const h = time[0];
+                                const m = time[1];
+                                const s = time[2];
+
+                                if (h == 0) {
+                                    latest = m + '分前にオンライン';
+                                } else {
+                                    latest = h + '時間前にオンライン';
+                                }
                             }
                         }
                     }
