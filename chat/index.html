@@ -357,12 +357,11 @@
                     if (status == 'online') {
                         latest = 'オンライン中';
                     } else if (status == 'offline') {
-                        var latest_date = latestonline.substr(0, 10);
-                        var latest_time = latestonline.substr(11, 15);
-                        latest_date = latest_date.replace(/-/g, '/');
+                        var latest_date = (latestonline.substr(0, 10)).replace(/-/g, '/');;
+                        var latest_time = new Date(latestonline).getHours() + ':' + new Date(latestonline).getMinutes(); 
 
                         console.log('now: ' + now_time);
-                        console.log('latest: ' + latest_time);
+                        console.log('latest: ' + latestonline);
                         if (latest_date != now_date) {
                             latest = 'オフライン'
                         } else {
