@@ -226,6 +226,7 @@
             }
 
             writeLoginInfo(_id, _token, _username);
+            loadLoginInfo();
         }
 
         $('#js-modal').fadeOut(140);
@@ -234,10 +235,6 @@
         sendOnlineStatus('online');
 
         isloginactive = true;
-
-        id = _id;
-        token = _token;
-        username = _username;
 
         getMessage();
         getOnlineStatus();
