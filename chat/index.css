@@ -8,7 +8,7 @@ body {
     --color-users-backgroud: #f7f7f7;
     --color-users-online: #00bb1f;
     --color-users-offline: #b9b9b9;
-    
+
     --color-message-background: #ffffff;
     --color-message-text: #000000;
     --color-message-timestamp: #8d8d8d;
@@ -212,6 +212,7 @@ input[type="text"]:focus {
 .message-area {
     width: calc(100vw - 210px);
     height: calc(100vh - 26px);
+    background: var(--color-message-background);
 }
 
 #message-data {
@@ -219,6 +220,7 @@ input[type="text"]:focus {
     flex-direction: column;
     height: calc(100% - 32px);
     overflow: hidden scroll;
+    background: var(--color-message-background);
 }
 
 .message-data-items {
@@ -228,6 +230,7 @@ input[type="text"]:focus {
     padding-bottom: 3px;
     transition-duration: 0.08s;
     cursor: default;
+    background: var(--color-message-background);
 }
 
 .message-data-items:hover {
@@ -356,7 +359,7 @@ input[type="text"]:focus {
 }
 
 .left-area {
-    background: #f7f7f7;
+    background: var(--color-users-backgroud);
 }
 
 #option-data>a {
