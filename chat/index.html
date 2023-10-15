@@ -429,12 +429,12 @@
                             icon = 'circle-online';
                             _username = _username + ' (自分)'
                         } else {
-                            var latest_date = new Intl.DateTimeFormat("ja-jp", {
+                            const latest_date = new Intl.DateTimeFormat("ja-jp", {
                                 year: "numeric",
                                 month: "2-digit",
                                 day: "2-digit",
                             }).format(new Date(latestonline));
-                            var latest_time = new Intl.DateTimeFormat("ja-jp", {
+                            const latest_time = new Intl.DateTimeFormat("ja-jp", {
                                 hour: "2-digit",
                                 minute: "2-digit",
                             }).format(new Date(latestonline));
