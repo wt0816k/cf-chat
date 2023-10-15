@@ -667,11 +667,15 @@
     });
 
     $(window).on('online', function () {
-        
+        $('#offline-message').animate({
+			bottom: '-100px'
+		});
     });
 
     $(window).on('offline', function () {
-        
+        $('#offline-message').animate({
+			bottom: '68px'
+		});
     });
 
     $(function () {
