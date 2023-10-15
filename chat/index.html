@@ -337,6 +337,7 @@
                 }
             })
             .then(function (json) {
+                $('#users-data').empty();
                 for (const data of json) {
                     const status = data.status;
                     const username = data.username;
@@ -370,7 +371,6 @@
                         timeMath.sub()
                     }
 
-                    $('#users-data').empty();
                     $('#users-data').append(
                         '<div class="users-data-items">' +
                         '<div>' +
