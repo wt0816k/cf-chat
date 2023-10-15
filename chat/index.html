@@ -234,10 +234,15 @@
         username = _username;
 
         getMessage();
+        getOnlineStatus();
 
         timerId = setInterval(function () {
             getMessage();
         }, 2000);
+
+        setInterval(function () {
+            getOnlineStatus();
+        }, 20000)
     })
 
     $('#run-logout').on('click', function () {
