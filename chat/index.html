@@ -641,11 +641,11 @@
     })
 
     $('#highlight-mymessage').on('click', function () {
-        if ($('#highlight-mymessage').val() == 'on') {
+        if (document.getElementById('highlight-mymessage').checked) {
             $('.message-data-my').each(function () {
                 $(this).parent().css('background', 'var(--color-message-text-highlight)');
             })
-        } else if ($('#highlight-mymessage').val() == 'off') {
+        } else {
             $('.message-data-my').each(function () {
                 $(this).parent().css('background', 'var(--color-message-background)');
             })
