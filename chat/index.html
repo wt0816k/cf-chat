@@ -72,8 +72,8 @@
                                 fill="#858585"></path>
                         </g>
                     </svg>
-                    <svg id="arrow-down" style="display: none;" width="28px" height="28px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg id="arrow-down" style="display: none;" width="28px" height="28px" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                         <g id="SVGRepo_iconCarrier">
@@ -84,7 +84,7 @@
                     </svg>
                     <a>ユーザー</a>
                 </div>
-                <div class="users-data">
+                <div id="users-data">
                     <div class="users-data-items">
                         <div>
                             <div class="circle-online"></div>
@@ -123,6 +123,7 @@
     var timerId = '';
     var oldjson = {};
     var isactive = true;
+    var users_expanded = true;
 
     function getCookieArray() {
         var arr = new Array();
@@ -336,11 +337,187 @@
                 }
             })
             .then(function (json) {
+                for (const data of json) {
+                    const status = json.status;
+                    const username = json.username;
+                    const latestonline = json.latestonline;
+
+                    const now_date = new Intl.DateTimeFormat("ja-jp", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                    }).format(new Date());
+                    const now_time = new Intl.DateTimeFormat("ja-jp", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        second: "2-digit",
+                    }).format(new Date());
+
+                    var icon = '';
+                    if (status == 'online') {
+                        icon = 'circle-online';
+                    } else if (status == 'offline') {
+                        icon = 'circle-offline';
+                    }
+
+                    var latest = '';
+                    if (status == 'online') {
+                        latest = 'オンライン中';
+                    } else if (status == 'offline') {
+                        var latest_date = latestonline.substr(0, 10);
+                        var latest_time = latestonline.substr(11);
+                        console.log(latest_date + ', ' + latest_time);
+                        timeMath.sub()
+                    }
+
+                    $('#users-data').empty();
+                    $('#users-data').append(
+                        '<div class="users-data-items">' +
+                        '<div>' +
+                        '<div class="' + icon + '"></div>' +
+                        '<span>' + username + '</span>' +
+                        '</div>' +
+                        '<a>' + latest + '</a>' +
+                        '</div>'
+                    );
+                }
                 console.log(json);
             })
     }
 
-    var users_expanded = true;
+    var timeMath = {
+        sum: function () {
+            var result, times, second,
+                len = arguments.length;
+
+            if (len === 0) return;
+
+            for (var i = 0; i < len; i++) {
+                if (!arguments[i] || !arguments[i].match(/^[0-9]+:[0-9]{2}:[0-9]{2}$/)) continue;
+
+                times = arguments[i].split(':');
+
+                second = this.toSecond(times[0], times[1], times[2]);
+
+                if ((!second && second !== 0)) continue;
+
+                if (i === 0) {
+                    result = second;
+                } else {
+                    result += second;
+                }
+            }
+
+            return this.toTimeFormat(result);
+        },
+
+        sub: function () {
+            var result, times, second,
+                len = arguments.length;
+
+            if (len === 0) return;
+
+            for (var i = 0; i < len; i++) {
+                if (!arguments[i] || !arguments[i].match(/^[0-9]+:[0-9]{2}:[0-9]{2}$/)) continue;
+
+                times = arguments[i].split(':');
+
+                second = this.toSecond(times[0], times[1], times[2]);
+
+                if (!second) continue;
+
+                if (i === 0) {
+                    result = second;
+                } else {
+                    result -= second;
+                }
+            }
+
+            return this.toTimeFormat(result);
+        },
+
+        multiply: function () {
+            var result, times, second,
+                len = arguments.length;
+
+            if (len === 0) return;
+
+            for (var i = 0; i < len; i++) {
+                if (!arguments[i] || !arguments[i].match(/^[0-9]+:[0-9]{2}:[0-9]{2}$/)) continue;
+
+                times = arguments[i].split(':');
+
+                second = this.toSecond(times[0], times[1], times[2]);
+
+                if (!second) continue;
+
+                if (i === 0) {
+                    result = second;
+                } else {
+                    result *= second;
+                }
+            }
+
+            return this.toTimeFormat(result);
+        },
+
+        division: function () {
+            var result, times, second,
+                len = arguments.length;
+
+            if (len === 0) return;
+
+            for (var i = 0; i < len; i++) {
+                if (!arguments[i] || !arguments[i].match(/^[0-9]+:[0-9]{2}:[0-9]{2}$/)) continue;
+
+                times = arguments[i].split(':');
+
+                second = this.toSecond(times[0], times[1], times[2]);
+
+                if (!second) continue;
+
+                if (i === 0) {
+                    result = second;
+                } else {
+                    result /= second;
+                }
+            }
+
+            return this.toTimeFormat(result);
+        },
+
+        toSecond: function (hour, minute, second) {
+            if ((!hour && hour !== 0) || (!minute && minute !== 0) || (!second && second !== 0) ||
+                hour === null || minute === null || second === null ||
+                typeof hour === 'boolean' ||
+                typeof minute === 'boolean' ||
+                typeof second === 'boolean' ||
+                typeof Number(hour) === 'NaN' ||
+                typeof Number(minute) === 'NaN' ||
+                typeof Number(second) === 'NaN') return;
+
+            return (Number(hour) * 60 * 60) + (Number(minute) * 60) + Number(second);
+        },
+
+        toTimeFormat: function (fullSecond) {
+            var hour, minute, second;
+
+            if ((!fullSecond && fullSecond !== 0) || !String(fullSecond).match(/^[\-0-9][0-9]*?$/)) return;
+
+            var paddingZero = function (n) {
+                return (n < 10) ? '0' + n : n;
+            };
+
+            hour = Math.floor(Math.abs(fullSecond) / 3600);
+            minute = Math.floor(Math.abs(fullSecond) % 3600 / 60);
+            second = Math.floor(Math.abs(fullSecond) % 60);
+
+            minute = paddingZero(minute);
+            second = paddingZero(second);
+
+            return ((fullSecond < 0) ? '-' : '') + hour + ':' + minute + ':' + second;
+        }
+    };
 
     $('.users-expand').eq(0).on('click', function () {
         if (!users_expanded) {

@@ -302,7 +302,7 @@ input[type="text"]:focus {
     background: #b9b9b9;
 }
 
-.users-data {
+#users-data {
     display: flex;
     flex-direction: column;
 }
