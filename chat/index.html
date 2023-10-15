@@ -184,8 +184,11 @@
                     $('#message-data').empty();
                     for (const data of json) {
                         var classname = '';
+                        var href = '';
+
                         if (isValidUrl(data.message)) {
                             classname = ' message-data-link';
+                            href = 'href="' + data.message + '"';
                         }
 
                         $('#message-data').append(
@@ -193,7 +196,7 @@
                             //'<span class="message-data-item message-data-id">' + data.id + '</span>' +
                             '<span class="message-data-item message-data-timestamp">' + data.timestamp + '</span>' +
                             '<span class="message-data-item message-data-username">' + data.username + '</span>' +
-                            '<span class="message-data-item message-data-message' + classname + '">' + data.message + '</span>' +
+                            '<a class="message-data-item message-data-message' + classname + '" ' + href +'>' + data.message + '</a>' +
                             '</div>'
                         );
                     }
