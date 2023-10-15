@@ -376,8 +376,9 @@
                         var latest_time = latestonline.substr(11);
                         if (latest_date == now_date) {
                             latest = 'オフライン'
+                        } else {
+                            latest = timeMath.sub(now_time, latest_time);
                         }
-                        timeMath.sub()
                     }
 
                     $('#users-data').append(
