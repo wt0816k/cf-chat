@@ -357,9 +357,15 @@
                     if (status == 'online') {
                         latest = 'オンライン中';
                     } else if (status == 'offline') {
-                        const date = new Date(latestonline);
-                        var latest_date = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay();
-                        var latest_time = date.getHours() + ':' + date.getMinutes(); 
+                        var latest_date = new Intl.DateTimeFormat("ja-jp", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                        }).format(new Date(latestonline));
+                        var latest_time = new Intl.DateTimeFormat("ja-jp", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                        }).format(new Date(latestonline));
 
                         if (latest_date != now_date) {
                             latest = 'オフライン'
