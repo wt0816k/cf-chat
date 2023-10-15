@@ -242,7 +242,7 @@
 
         setInterval(function () {
             getOnlineStatus();
-        }, 20000)
+        }, 10000)
     })
 
     $('#run-logout').on('click', function () {
@@ -374,7 +374,9 @@
                     } else if (status == 'offline') {
                         var latest_date = latestonline.substr(0, 10);
                         var latest_time = latestonline.substr(11);
-                        console.log(latest_date + ', ' + latest_time);
+                        if (latest_date == now_date) {
+                            latest = 'オフライン'
+                        }
                         timeMath.sub()
                     }
 
