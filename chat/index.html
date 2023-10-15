@@ -531,13 +531,13 @@
 
     $('.users-expand').eq(0).on('click', function () {
         if (!users_expanded) {
-            $('.users-data').eq(0).slideDown('400ms', function () {
+            $('#users-data').slideDown('400ms', function () {
                 $('#arrow-up').show();
                 $('#arrow-down').hide();
             });
         }
         else {
-            $('.users-data').eq(0).slideUp('400ms', function () {
+            $('#users-data').slideUp('400ms', function () {
                 $('#arrow-up').hide();
                 $('#arrow-down').show();
             });
