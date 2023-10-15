@@ -668,14 +668,17 @@
 
     $(window).on('online', function () {
         $('#offline-message').animate({
-			bottom: '-140px'
-		});
+            bottom: '-140px'
+        }), function () {
+            $('#offline-message').hide();
+        }
     });
 
     $(window).on('offline', function () {
+        $('#offline-message').show();
         $('#offline-message').animate({
-			bottom: '68px'
-		});
+            bottom: '68px'
+        });
     });
 
     $(function () {
