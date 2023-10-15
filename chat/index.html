@@ -279,13 +279,13 @@
 
         const tid_2 = setInterval(function () {
             getOnlineStatus();
-        }, 20000)
+        }, 10000)
 
         const tid_3 = setInterval(function () {
             if (isactive) {
                 sendOnlineStatus('online');
             }
-        }, 10000)
+        }, 5000)
 
         timerId = tid_1;
     })
