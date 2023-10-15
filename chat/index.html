@@ -141,6 +141,7 @@
     var oldjson_users = {};
     var isactive = true;
     var users_expanded = true;
+    var option_expanded = true;
 
     function getCookieArray() {
         var arr = new Array();
@@ -604,7 +605,7 @@
         }
     };
 
-    $('#users-expand').eq(0).on('click', function () {
+    $('#users-expand').on('click', function () {
         if (!users_expanded) {
             $('#users-data').slideDown('400ms', function () {
                 $('#users-arrow-up').show();
@@ -619,6 +620,23 @@
         }
 
         users_expanded = !users_expanded;
+    })
+
+    $('#option-expand').on('click', function () {
+        if (!option_expanded) {
+            $('#option-data').slideDown('400ms', function () {
+                $('#option-arrow-up').show();
+                $('#option-arrow-down').hide();
+            });
+        }
+        else {
+            $('#option-data').slideUp('400ms', function () {
+                $('#option-arrow-up').hide();
+                $('#option-arrow-down').show();
+            });
+        }
+
+        option_expanded = !option_expanded;
     })
 
     $(window).on('beforeunload', function () {
