@@ -99,8 +99,8 @@
                                         fill="#858585"></path>
                                 </g>
                             </svg>
-                            <svg id="option-arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg id="option-arrow-down" style="display: none;" width="24px" height="24px"
+                                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                 <g id="SVGRepo_iconCarrier">
@@ -641,11 +641,11 @@
     })
 
     $('#highlight-mymessage').on('click', function () {
-        if ($('#highlight-mymessage').val()) {
+        if ($('#highlight-mymessage').val() == 'on') {
             $('.message-data-my').each(function () {
                 $(this).parent().css('background', 'var(--color-message-text-highlight)');
             })
-        } else {
+        } else if ($('#highlight-mymessage').val() == 'off') {
             $('.message-data-my').each(function () {
                 $(this).parent().css('background', 'var(--color-message-background)');
             })
