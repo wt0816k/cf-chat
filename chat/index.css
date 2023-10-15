@@ -11,6 +11,7 @@ body {
 
     --color-message-background: #ffffff;
     --color-message-text: #000000;
+    --color-message-text-highlight: #b3e6ff;
     --color-message-timestamp: #8d8d8d;
     --color-message-link: #0000ee;
 

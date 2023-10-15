@@ -643,7 +643,7 @@
     $('#highlight-mymessage').on('click', function () {
         if ($('#highlight-mymessage').val()) {
             $('.message-data-my').each(function () {
-                $(this).parent().css('background', '#b3e6ff');
+                $(this).parent().css('background', 'var(--color-message-text-highlight)');
             })
         } else {
             $('.message-data-my').each(function () {
