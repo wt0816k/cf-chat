@@ -360,7 +360,9 @@
                         var latest_date = latestonline.substr(0, 10);
                         var latest_time = latestonline.substr(11, 15);
                         latest_date = latest_date.replace(/-/g, '/');
-                        
+
+                        console.log('now: ' + now_time);
+                        console.log('latest: ' + latest_time);
                         if (latest_date == now_date) {
                             latest = 'オフライン'
                         } else {
