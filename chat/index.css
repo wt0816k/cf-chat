@@ -278,6 +278,10 @@ input[type="text"]:focus {
     cursor: pointer;
 }
 
+.users-expand:hover {
+    background: #c2c2c2;
+}
+
 .users-expand>a {
     color: #858585;
     font-size: 14px;
