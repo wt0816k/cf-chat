@@ -108,7 +108,8 @@
     var token = '';
     var username = '';
     var timerId = '';
-    var oldjson = {};
+    var oldjson_msg = {};
+    var oldjson_users = {};
     var isactive = true;
     var users_expanded = true;
 
@@ -170,7 +171,7 @@
                 }
             })
             .then(function (json) {
-                if (_.isEqual(json, oldjson)) {
+                if (_.isEqual(json, oldjson_msg)) {
                 } else {
                     $('#message-data').empty();
                     for (const data of json) {
@@ -190,7 +191,7 @@
                     }
 
                     document.getElementById('message-data').scrollTo(0, document.getElementById('message-data').scrollHeight);
-                    oldjson = json;
+                    oldjson_msg = json;
 
                     console.log('[Information] Message has been updated.');
                 }
@@ -333,81 +334,86 @@
                 }
             })
             .then(function (json) {
-                $('#users-data').empty();
-                for (const data of json) {
-                    const status = data.status;
-                    const _username = data.username;
-                    const latestonline = data.latestonline;
+                if (_.isEqual(json, oldjson_users)) {
+                } else {
+                    $('#users-data').empty();
+                    for (const data of json) {
+                        const status = data.status;
+                        const _username = data.username;
+                        const latestonline = data.latestonline;
 
-                    var style = '';
+                        var style = '';
 
-                    const now_date = new Intl.DateTimeFormat("ja-jp", {
-                        year: "numeric",
-                        month: "2-digit",
-                        day: "2-digit",
-                    }).format(new Date());
-                    const now_time = new Intl.DateTimeFormat("ja-jp", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                    }).format(new Date());
+                        const now_date = new Intl.DateTimeFormat("ja-jp", {
+                            year: "numeric",
+                            month: "2-digit",
+                            day: "2-digit",
+                        }).format(new Date());
+                        const now_time = new Intl.DateTimeFormat("ja-jp", {
+                            hour: "2-digit",
+                            minute: "2-digit",
+                        }).format(new Date());
 
-                    var icon = '';
-                    if (status == 'online') {
-                        icon = 'circle-online';
-                    } else if (status == 'offline') {
-                        icon = 'circle-offline';
-                    }
-
-                    var latest = '';
-                    if (status == 'online') {
-                        latest = 'オンライン中';
-                    } else if (status == 'offline') {
-                        if (_username == username) {
-                            latest = 'オンライン中';
+                        var icon = '';
+                        if (status == 'online') {
                             icon = 'circle-online';
-                            style = ' style="font-weight: 800;"';
-                        } else {
-                            var latest_date = new Intl.DateTimeFormat("ja-jp", {
-                                year: "numeric",
-                                month: "2-digit",
-                                day: "2-digit",
-                            }).format(new Date(latestonline));
-                            var latest_time = new Intl.DateTimeFormat("ja-jp", {
-                                hour: "2-digit",
-                                minute: "2-digit",
-                            }).format(new Date(latestonline));
+                        } else if (status == 'offline') {
+                            icon = 'circle-offline';
+                        }
 
-                            if (latest_date != now_date) {
-                                latest = 'オフライン'
+                        var latest = '';
+                        if (status == 'online') {
+                            latest = 'オンライン中';
+                        } else if (status == 'offline') {
+                            if (_username == username) {
+                                latest = 'オンライン中';
+                                icon = 'circle-online';
+                                style = ' style="font-weight: 800;"';
                             } else {
-                                var _time = timeMath.sub(now_time + ':00', latest_time + ':00');
-                                const time = _time.split(':');
-                                const h = time[0];
-                                const m = time[1];
-                                const s = time[2];
+                                var latest_date = new Intl.DateTimeFormat("ja-jp", {
+                                    year: "numeric",
+                                    month: "2-digit",
+                                    day: "2-digit",
+                                }).format(new Date(latestonline));
+                                var latest_time = new Intl.DateTimeFormat("ja-jp", {
+                                    hour: "2-digit",
+                                    minute: "2-digit",
+                                }).format(new Date(latestonline));
 
-                                if (h == 0) {
-                                    if (m.charAt(0) == '0') {
-                                        latest = m.charAt(1) + '分前にオンライン';
-                                    } else {
-                                        latest = m + '分前にオンライン';
-                                    }
+                                if (latest_date != now_date) {
+                                    latest = 'オフライン'
                                 } else {
-                                    latest = h + '時間前にオンライン';
+                                    var _time = timeMath.sub(now_time + ':00', latest_time + ':00');
+                                    const time = _time.split(':');
+                                    const h = time[0];
+                                    const m = time[1];
+                                    const s = time[2];
+
+                                    if (h == 0) {
+                                        if (m.charAt(0) == '0') {
+                                            latest = m.charAt(1) + '分前にオンライン';
+                                        } else {
+                                            latest = m + '分前にオンライン';
+                                        }
+                                    } else {
+                                        latest = h + '時間前にオンライン';
+                                    }
                                 }
                             }
                         }
+
+                        $('#users-data').append(
+                            '<div class="users-data-items">' +
+                            '<div>' +
+                            '<div class="' + icon + '"></div>' +
+                            '<span' + style + '>' + _username + '</span>' +
+                            '</div>' +
+                            '<a>' + latest + '</a>' +
+                            '</div>'
+                        );
                     }
 
-                    $('#users-data').append(
-                        '<div class="users-data-items">' +
-                        '<div>' +
-                        '<div class="' + icon + '"></div>' +
-                        '<span' + style +'>' + _username + '</span>' +
-                        '</div>' +
-                        '<a>' + latest + '</a>' +
-                        '</div>'
-                    );
+                    oldjson_users = json;
                 }
             })
     }
