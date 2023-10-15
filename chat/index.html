@@ -102,7 +102,8 @@
     </div>
 </body>
 <script>
-    var islogin = false;
+    var islogindata = false;
+    var isloginactive = false;
     var id = '';
     var token = '';
     var username = '';
@@ -201,7 +202,7 @@
         const _token = $('#login-token').val();
         const _username = $('#login-username').val();
 
-        if (!islogin) {
+        if (!islogindata) {
             if (_id === '' || _token === '' || _username === '') {
                 $('.login-error').eq(0).show();
                 return;
@@ -214,6 +215,8 @@
         $('.main').eq(0).show();
 
         sendOnlineStatus('online');
+
+        isloginactive = true;
 
         id = _id;
         token = _token;
@@ -283,7 +286,7 @@
     })
 
     document.onvisibilitychange = function () {
-        if (islogin) {
+        if (isloginactive) {
             if (document.visibilityState === 'hidden') {
                 isactive = false;
                 sendOnlineStatus('offline');
@@ -545,8 +548,8 @@
     $(function () {
         $('.main').eq(0).hide();
 
-        islogin = loadLoginInfo();
-        if (islogin) {
+        islogindata = loadLoginInfo();
+        if (islogindata) {
             $('.login-input-dialog').hide();
             $('.login-confirm-dialog').show();
             $('#run-logout').show();
