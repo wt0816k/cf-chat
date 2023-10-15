@@ -267,12 +267,11 @@
         $('#js-modal').fadeOut(140);
         $('.main').eq(0).show();
 
-        sendOnlineStatus('online');
-
         isloginactive = true;
 
         getMessage();
         getOnlineStatus();
+        sendOnlineStatus('online');
 
         const tid_1 = setInterval(function () {
             getMessage();
