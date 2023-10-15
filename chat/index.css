@@ -280,8 +280,7 @@ input[type="text"]:focus {
 
 .users-expand>a {
     color: #858585;
-    margin-left: 2px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .circle-online, .circle-offline {
