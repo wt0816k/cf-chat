@@ -118,7 +118,6 @@
                 </div>
             </div>
             <div class="message-area">
-                <button id="message-stop" style="position: absolute; display: none;">受信を停止</button>
                 <div id="message-data">
                 </div>
             </div>
@@ -322,8 +321,12 @@
 
     $('#send').on('click', function () {
         const message = $('#message-input').val();
+        sendMessage(message);
+        $('#message-input').val('');
+    })
 
-        if (message === '') {
+    function sendMessage(message) {
+        if (message == '') {
             $('.input-area').eq(0).addClass('shake');
             $('#message-input').css('background', '#ffb5b5');
             setTimeout(function () {
@@ -353,12 +356,7 @@
         };
         fetch(url, params);
 
-        $('#message-input').val('');
-    })
-
-    $('#message-stop').on('click', function () {
-        clearInterval(timerId);
-    })
+    }
 
     document.onvisibilitychange = function () {
         if (isloginactive) {
