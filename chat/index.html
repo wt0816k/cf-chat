@@ -200,7 +200,7 @@
     async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 50;
-        const param = new URLSearchParams({ id: id, token: token, count: count })
+        const param = new URLSearchParams({ dataid: id, token: token, count: count })
         const url = gas + '?' + param;
 
         fetch(url)
@@ -343,7 +343,7 @@
         }).format(new Date());
 
         const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
-        const json = { id: id, token: token, timestamp: date, username: username, message: message };
+        const json = { dataid: id, token: token, timestamp: date, username: username, message: message };
 
         const params = {
             "method": "POST",
@@ -381,7 +381,7 @@
 
     function sendOnlineStatus(status) {
         const url = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
-        const json = { id: id, token: token, username: username, status: status };
+        const json = { dataid: id, token: token, username: username, status: status };
         const params = {
             "method": "POST",
             "mode": "no-cors",
@@ -394,7 +394,7 @@
 
     function getOnlineStatus() {
         const gas = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
-        const json = { id: id, token: token };
+        const json = { dataid: id, token: token };
         const query = new URLSearchParams(json);
         const url = gas + '?' + query;
 
