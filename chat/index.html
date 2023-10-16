@@ -294,7 +294,8 @@
                     });
 
                     $('.message-data-button-remove').on('click', function () {
-                        const mymessage = $('.message-data-message').eq($(this).parent().index($(this).parent())).text();
+                        const parent = $(this).parent();
+                        const mymessage = $('.message-data-message').eq(parent.index(parent)).text();
                         $('#confirm-dialog-text').text('メッセージ: "' + mymessage + '"を送信取り消ししますか？')
                         $('#login-dialog').hide();
                         $('#confirm-dialog').show();
