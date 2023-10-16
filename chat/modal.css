@@ -36,7 +36,7 @@
     display: inline-block;
 }
 
-.modal__content>h1 {
+#login-dialog>h1, #confirm-dialog>h1 {
     font-size: 24px;
 }
 

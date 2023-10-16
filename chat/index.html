@@ -20,40 +20,50 @@
         <div class="modal">
             <div class="modal__inner">
                 <div class="modal__content">
-                    <h1>ログイン</h1>
-                    <div class="login-input-dialog">
-                        <div class="modal__items">
-                            <div class="modal__item">
-                                <a class="modal__item_text">ID</a>
-                                <input type="text" id="login-id">
+                    <div id="login-dialog">
+                        <h1>ログイン</h1>
+                        <div class="login-input-dialog">
+                            <div class="modal__items">
+                                <div class="modal__item">
+                                    <a class="modal__item_text">ID</a>
+                                    <input type="text" id="login-id">
+                                </div>
+                                <div class="modal__item">
+                                    <a class="modal__item_text">認証鍵</a>
+                                    <input type="password" id="login-token">
+                                </div>
+                                <div class="modal__item">
+                                    <a class="modal__item_text">ニックネーム</a>
+                                    <input type="text" id="login-username">
+                                </div>
                             </div>
-                            <div class="modal__item">
-                                <a class="modal__item_text">認証鍵</a>
-                                <input type="password" id="login-token">
-                            </div>
-                            <div class="modal__item">
-                                <a class="modal__item_text">ニックネーム</a>
-                                <input type="text" id="login-username">
+                            <a class="login-error">未入力の項目があります。</a>
+                        </div>
+                        <div class="login-confirm-dialog">
+                            <p>前回のログイン情報で続行しますか？</p>
+                            <div class="modal__items">
+                                <div class="modal__item">
+                                    <a class="modal__item_text">ID</a>
+                                    <a id="saved-login-id"></a>
+                                </div>
+                                <div class="modal__item">
+                                    <a class="modal__item_text">ニックネーム</a>
+                                    <a id="saved-login-username"></a>
+                                </div>
                             </div>
                         </div>
-                        <a class="login-error">未入力の項目があります。</a>
-                    </div>
-                    <div class="login-confirm-dialog">
-                        <p>前回のログイン情報で続行しますか？</p>
-                        <div class="modal__items">
-                            <div class="modal__item">
-                                <a class="modal__item_text">ID</a>
-                                <a id="saved-login-id"></a>
-                            </div>
-                            <div class="modal__item">
-                                <a class="modal__item_text">ニックネーム</a>
-                                <a id="saved-login-username"></a>
-                            </div>
+                        <div class="button-grp">
+                            <button id="run-logout">ログアウト</button>
+                            <button id="run-login">OK</button>
                         </div>
                     </div>
-                    <div class="button-grp">
-                        <button id="run-logout">ログアウト</button>
-                        <button id="run-login">OK</button>
+                    <div id="confirm-dialog">
+                        <a>確認</a>
+                        <p id="confirm-dialog-text"></p>
+                        <div class="button-grp">
+                            <button id="confirm-cancel">キャンセル</button>
+                            <button id="confirm-ok">OK</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -278,6 +288,20 @@
                     }, function () {
                         const index = $('.message-data-items').index(this);
                         $('.message-data-buttons').hide();
+                    });
+
+                    $('.message-data-button-remove').on('click', function () {
+                        $('#login-dialog').hide();
+                        $('#confirm-dialog').show();
+                        $('#js-modal').fadeIn(140);
+                    });
+
+                    $('#confirm-ok').on('click', function () {
+                        
+                    });
+                    
+                    $('#confirm-cancel').on('click', function () {
+                        $('#js-modal').fadeIn(140);
                     });
 
                     if (!isactive) {
@@ -759,6 +783,8 @@
     });
 
     $(function () {
+        $('#login-dialog').show();
+        $('#confirm-dialog').hide();
         $('.main').eq(0).hide();
 
         islogindata = loadLoginInfo();
