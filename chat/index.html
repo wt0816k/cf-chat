@@ -251,6 +251,7 @@
                 }
             })
             .catch(function (error) {
+                $('#information').css('background', '#a40000')+
                 $('#information a').text('エラー: "' + error + '"');
                 $('#information').animate({
                     bottom: '68px'
@@ -494,6 +495,7 @@
             })
             .catch(function (error) {
                 $('#information a').text('エラー: "' + error + '"');
+                $('#information').css('background', '#a40000')+
                 $('#information').animate({
                     bottom: '68px'
                 });
