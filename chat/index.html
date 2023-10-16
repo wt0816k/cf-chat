@@ -324,6 +324,7 @@
                     $('#confirm-ok').on('click', function () {
                         const _id = $('.message-data-id').eq(_temp_id).text();
                         removeMessage(_id);
+                        $('#js-modal').fadeOut(140);
                     });
 
                     $('#confirm-cancel').on('click', function () {
