@@ -157,6 +157,8 @@
     var users_expanded = true;
     var option_expanded = true;
 
+    var _temp_id = '0';
+
     function getCookieArray() {
         var arr = new Array();
         if (document.cookie != '') {
@@ -207,7 +209,22 @@
         }
     }
 
-    async function removeMessage(id) {
+    async function removeMessage(_id) {
+        const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const json = {
+            type: 'remove',
+            dataid: id,
+            token: token,
+            id: _id
+        };
+
+        const params = {
+            "method": "POST",
+            "mode": "no-cors",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "body": JSON.stringify(json)
+        };
+        fetch(url, params);
     }
 
     async function getMessage() {
@@ -270,10 +287,11 @@
                             elem =
                                 `
                             <div class="message-data-items">
+                                <span class="message-data-item message-data-id" style="display: none;">${data.id}</span>
                                 <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
                                 <span class="message-data-item message-data-username">${data.username}</span>
                                 <a class="message-data-item message-data-message ${classname}" ${href}>${data.message}</a>
-                                <div class="message-data-buttons">            
+                                <div class="message-data-buttons">
                                     ${buttons}
                                 </div>
                             </div>
@@ -295,7 +313,8 @@
 
                     $('.message-data-button-remove').on('click', function () {
                         const parent = $(this).parent();
-                        const mymessage = $('.message-data-message').eq($('.message-data-buttons').index(parent)).text();
+                        _temp_id = $('.message-data-buttons').index(parent);
+                        const mymessage = $('.message-data-message').eq(_temp_id).text();
                         $('#confirm-dialog-text').text('メッセージ: ' + mymessage + ' を送信取り消ししますか？')
                         $('#login-dialog').hide();
                         $('#confirm-dialog').show();
@@ -303,7 +322,7 @@
                     });
 
                     $('#confirm-ok').on('click', function () {
-                        removeMessage(0);
+                        removeMessage($('.message-data-id').eq(_temp_id).text());
                     });
 
                     $('#confirm-cancel').on('click', function () {
