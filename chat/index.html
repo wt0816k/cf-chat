@@ -305,7 +305,7 @@
                     $('#confirm-ok').on('click', function () {
                         removeMessage(0);
                     });
-                    
+
                     $('#confirm-cancel').on('click', function () {
                         $('#js-modal').fadeOut(140);
                     });
@@ -323,18 +323,22 @@
             })
             .catch(function (error) {
                 if (navigator.onLine) {
-                    $('#information').css('background', '#a40000');
-                    $('#information a').text('エラー: "' + error + '"');
-                    $('#information').animate({
-                        bottom: '68px'
-                    });
-                    setTimeout(function () {
-                        $('#information').animate({
-                            bottom: '-140px'
-                        });
-                    }, 5000);
+                    showInformation('エラー: "' + error + '"', '#a40000', 5000);
                 }
             });
+    }
+
+    function showInformation(text, color, time) {
+        $('#information').css('background', color);
+        $('#information a').text(text);
+        $('#information').animate({
+            bottom: '68px'
+        });
+        setTimeout(function () {
+            $('#information').animate({
+                bottom: '-140px'
+            });
+        }, time);
     }
 
     $('#run-login').on('click', function () {
