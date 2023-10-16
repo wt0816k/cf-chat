@@ -251,7 +251,7 @@
                 }
             })
             .catch(function (error) {
-                if (!navigator.onLine) {
+                if (navigator.onLine) {
                     $('#information').css('background', '#a40000');
                     $('#information a').text('エラー: "' + error + '"');
                     $('#information').animate({
@@ -496,7 +496,7 @@
                 }
             })
             .catch(function (error) {
-                if (!navigator.onLine) {
+                if (navigator.onLine) {
                     $('#information').css('background', '#a40000');
                     $('#information a').text('エラー: "' + error + '"');
                     $('#information').animate({
