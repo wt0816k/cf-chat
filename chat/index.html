@@ -251,16 +251,18 @@
                 }
             })
             .catch(function (error) {
-                $('#information').css('background', '#a40000');
-                $('#information a').text('エラー: "' + error + '"');
-                $('#information').animate({
-                    bottom: '68px'
-                });
-                setTimeout(function () {
+                if (!navigator.onLine) {
+                    $('#information').css('background', '#a40000');
+                    $('#information a').text('エラー: "' + error + '"');
                     $('#information').animate({
-                        bottom: '-140px'
+                        bottom: '68px'
                     });
-                }, 5000);
+                    setTimeout(function () {
+                        $('#information').animate({
+                            bottom: '-140px'
+                        });
+                    }, 5000);
+                }
             });
     }
 
@@ -494,16 +496,18 @@
                 }
             })
             .catch(function (error) {
-                $('#information a').text('エラー: "' + error + '"');
-                $('#information').css('background', '#a40000');
-                $('#information').animate({
-                    bottom: '68px'
-                });
-                setTimeout(function () {
+                if (!navigator.onLine) {
+                    $('#information').css('background', '#a40000');
+                    $('#information a').text('エラー: "' + error + '"');
                     $('#information').animate({
-                        bottom: '-140px'
+                        bottom: '68px'
                     });
-                }, 5000);
+                    setTimeout(function () {
+                        $('#information').animate({
+                            bottom: '-140px'
+                        });
+                    }, 5000);
+                }
             });
     }
 
