@@ -491,8 +491,18 @@
                         '</div>'
                     );
                 }
-
             })
+            .catch(function (error) {
+                $('#information a').text('エラー: "' + error + '"');
+                $('#information').animate({
+                    bottom: '68px'
+                });
+                setTimeout(function () {
+                    $('#information').animate({
+                        bottom: '-140px'
+                    });
+                }, 5000);
+            });
     }
 
     var timeMath = {
