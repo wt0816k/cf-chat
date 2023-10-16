@@ -213,6 +213,7 @@
             })
             .then(function (json) {
                 if (_.isEqual(json, oldjson_msg)) {
+                } else if (json.flags == 'removed') {
                 } else {
                     $('#message-data').empty();
                     for (const data of json) {
