@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div id="confirm-dialog">
-                        <a>確認</a>
+                        <h1>確認</h1 >
                         <p id="confirm-dialog-text"></p>
                         <div class="button-grp">
                             <button id="confirm-cancel">キャンセル</button>
@@ -294,6 +294,8 @@
                     });
 
                     $('.message-data-button-remove').on('click', function () {
+                        const mymessage = $('.message-data-message').eq($(this).parent().index($(this).parent())).text();
+                        $('#confirm-dialog-text').text('メッセージ: "' + mymessage + '"を送信取り消ししますか？')
                         $('#login-dialog').hide();
                         $('#confirm-dialog').show();
                         $('#js-modal').fadeIn(140);
@@ -304,7 +306,7 @@
                     });
                     
                     $('#confirm-cancel').on('click', function () {
-                        $('#js-modal').fadeIn(140);
+                        $('#js-modal').fadeOut(140);
                     });
 
                     if (!isactive) {
