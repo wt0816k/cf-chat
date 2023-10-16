@@ -229,11 +229,13 @@
                         }
 
                         $('#message-data').append(
-                            `'<div class="message-data-items">
-                            <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
-                            <span class="message-data-item message-data-username">${data.username}</span>
-                            <a class="message-data-item message-data-message ${classname}" ${href}>${data.message}</a>'
-                            </div>'`
+                            `'
+                            <div class="message-data-items">
+                                <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
+                                <span class="message-data-item message-data-username">${data.username}</span>
+                                <a class="message-data-item message-data-message ${classname}" ${href}>${data.message}</a>'
+                            </div>
+                            '`
                         );
                     }
 
