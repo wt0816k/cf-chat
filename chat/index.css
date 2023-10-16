@@ -388,7 +388,7 @@ input[type="text"]:focus {
     z-index: 100;
 }
 
-#offline-message>a {
+#information>a {
     color: #ffffff;
     font-size: 14px;
 }
