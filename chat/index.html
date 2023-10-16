@@ -322,7 +322,8 @@
                     });
 
                     $('#confirm-ok').on('click', function () {
-                        removeMessage($('.message-data-id').eq(_temp_id).text());
+                        const _id = $('.message-data-id').eq(_temp_id).text();
+                        removeMessage(_id);
                     });
 
                     $('#confirm-cancel').on('click', function () {
