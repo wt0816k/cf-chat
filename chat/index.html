@@ -251,7 +251,7 @@
                 }
             })
             .catch(function (error) {
-                $('#information').css('background', '#a40000')+
+                $('#information').css('background', '#a40000');
                 $('#information a').text('エラー: "' + error + '"');
                 $('#information').animate({
                     bottom: '68px'
@@ -495,7 +495,7 @@
             })
             .catch(function (error) {
                 $('#information a').text('エラー: "' + error + '"');
-                $('#information').css('background', '#a40000')+
+                $('#information').css('background', '#a40000');
                 $('#information').animate({
                     bottom: '68px'
                 });
@@ -698,6 +698,7 @@
     });
 
     $(window).on('offline', function () {
+        $('#information').css('background', '#323232 ');
         $('#information a').text('現在、オフラインです。接続を待機しています...');
         $('#information').animate({
             bottom: '68px'
