@@ -745,6 +745,15 @@
         });
     });
 
+    $('.message-data-items').hover(function () {
+        const index = $('.message-data-items').index(this);
+        $('.message-data-buttons').hide();
+        $('.message-data-buttons').eq(index).show();
+    }, function () {
+        const index = $('.message-data-items').index(this);
+        $('.message-data-buttons').hide();
+    })
+
     $(function () {
         $('.main').eq(0).hide();
 
