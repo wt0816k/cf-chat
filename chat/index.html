@@ -207,6 +207,9 @@
         }
     }
 
+    async function removeMessage(id) {
+    }
+
     async function getMessage() {
         const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
         const count = 50;
@@ -297,7 +300,7 @@
                     });
 
                     $('#confirm-ok').on('click', function () {
-                        
+                        removeMessage(0);
                     });
                     
                     $('#confirm-cancel').on('click', function () {
