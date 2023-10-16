@@ -268,6 +268,14 @@
                     }
 
                     $('.message-data-buttons').hide();
+                    $('.message-data-items').hover(function () {
+                        const index = $('.message-data-items').index(this);
+                        $('.message-data-buttons').hide();
+                        $('.message-data-buttons').eq(index).show();
+                    }, function () {
+                        const index = $('.message-data-items').index(this);
+                        $('.message-data-buttons').hide();
+                    });
 
                     if (!isactive) {
                         document.getElementById('favicon').href = './favicon-notify.png';
@@ -761,15 +769,6 @@
             $('#run-logout').hide();
             console.log('[Information] No login information is available.')
         }
-
-        $('.message-data-items').hover(function () {
-            const index = $('.message-data-items').index(this);
-            $('.message-data-buttons').hide();
-            $('.message-data-buttons').eq(index).show();
-        }, function () {
-            const index = $('.message-data-items').index(this);
-            $('.message-data-buttons').hide();
-        });
     });
 </script>
 
