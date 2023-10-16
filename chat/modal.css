@@ -1,0 +1,118 @@
+
+
+.layer {
+    background: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 460px;
+}
+
+.modal__inner {
+    margin-top: 125px;
+    margin-bottom: 125px;
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    box-shadow: 0px 0px 12px 4px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+    display: block;
+    padding: 21px 8px 21px;
+    height: auto;
+}
+
+.modal__content {
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: inline-block;
+}
+
+.modal__content>h1 {
+    font-size: 24px;
+}
+
+.modal__items {
+    display: flex;
+    flex-direction: column;
+    margin-top: 38px;
+    margin-bottom: 10px;
+}
+
+.modal__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.modal__item>a {
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.modal__item>input {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 17px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #ededed;
+}
+
+.login-error {
+    display: none;
+    color: #c50909;
+    font-size: 16px;
+}
+
+.button-grp {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-grp>button {
+    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    height: 48px;
+    padding: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    transition-duration: 0.21s;
+}
+
+#run-login {
+    background: #77dff7;
+}
+
+#run-login:hover {
+    background: #4bd6f5;
+}
+
+#run-logout {
+    margin-right: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: #f77777;
+}
+
+#run-logout:hover {
+    background: #f54b4b;
+}
