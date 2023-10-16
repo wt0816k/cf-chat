@@ -778,13 +778,9 @@
 
     $('#highlight-mymessage').on('click', function () {
         if (document.getElementById('highlight-mymessage').checked) {
-            $('.message-data-my').each(function () {
-                $(this).parent().css('background', 'var(--color-message-text-highlight)');
-            })
+            document.documentElement.style.setProperty('--color-message-background', '#b3e6ff');
         } else {
-            $('.message-data-my').each(function () {
-                $(this).parent().css('background', 'var(--color-message-background)');
-            })
+            document.documentElement.style.setProperty('--color-message-background', '#ffffff');    
         }
     })
 
