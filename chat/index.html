@@ -286,11 +286,11 @@
 
                             elem =
                                 `
-                            <div class="message-data-items">
+                            <div class="message-data-items ${classname}">
                                 <span class="message-data-item message-data-id" style="display: none;">${data.id}</span>
                                 <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
                                 <span class="message-data-item message-data-username">${data.username}</span>
-                                <a class="message-data-item message-data-message ${classname}" ${href}>${data.message}</a>
+                                <a class="message-data-item message-data-message" ${href}>${data.message}</a>
                                 <div class="message-data-buttons">
                                     ${buttons}
                                 </div>
@@ -797,9 +797,9 @@
 
     $('#highlight-mymessage').on('click', function () {
         if (document.getElementById('highlight-mymessage').checked) {
-            document.documentElement.style.setProperty('--color-message-background', '#b3e6ff');
+            document.documentElement.style.setProperty('--color-message-background-my', '#b3e6ff');
         } else {
-            document.documentElement.style.setProperty('--color-message-background', '#ffffff');    
+            document.documentElement.style.setProperty('--color-message-background-my', '#ffffff');    
         }
     })
 

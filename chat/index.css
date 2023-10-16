@@ -11,8 +11,8 @@ body {
     --color-users-offline: #b9b9b9;
 
     --color-message-background: #ffffff;
+    --color-message-background-my: #ffffff;
     --color-message-text: #000000;
-    --color-message-text-highlight: #b3e6ff;
     --color-message-timestamp: #8d8d8d;
     --color-message-link: #0000ee;
 
@@ -126,6 +126,10 @@ input[type="text"]:focus {
     height: calc(100% - 32px);
     overflow: hidden scroll;
     background: var(--color-message-background);
+}
+
+.message-data-my {
+    background: var(--color-message-background-my);
 }
 
 .message-data-items {
