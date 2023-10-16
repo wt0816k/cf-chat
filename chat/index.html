@@ -266,7 +266,7 @@
 
                         $('#message-data').append(elem);
                     }
-                    
+
                     $('.message-data-buttons').hide();
 
                     if (!isactive) {
@@ -747,15 +747,6 @@
         });
     });
 
-    $('.message-data-items').hover(function () {
-        const index = $('.message-data-items').index(this);
-        $('.message-data-buttons').hide();
-        $('.message-data-buttons').eq(index).show();
-    }, function () {
-        const index = $('.message-data-items').index(this);
-        $('.message-data-buttons').hide();
-    })
-
     $(function () {
         $('.main').eq(0).hide();
 
@@ -770,7 +761,16 @@
             $('#run-logout').hide();
             console.log('[Information] No login information is available.')
         }
-    })
+
+        $('.message-data-items').hover(function () {
+            const index = $('.message-data-items').index(this);
+            $('.message-data-buttons').hide();
+            $('.message-data-buttons').eq(index).show();
+        }, function () {
+            const index = $('.message-data-items').index(this);
+            $('.message-data-buttons').hide();
+        });
+    });
 </script>
 
 </html>
