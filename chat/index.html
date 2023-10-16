@@ -323,22 +323,36 @@
             })
             .catch(function (error) {
                 if (navigator.onLine) {
-                    showInformation('エラー: "' + error + '"', '#a40000', 5000);
+                    showInformation('エラー: "' + error + '"', '#a40000', 5000, null);
                 }
             });
     }
 
-    function showInformation(text, color, time) {
-        $('#information').css('background', color);
-        $('#information a').text(text);
-        $('#information').animate({
-            bottom: '68px'
-        });
-        setTimeout(function () {
+    function showInformation(text, color, time, show) {
+        if (time != 0) {
+            $('#information').css('background', color);
+            $('#information a').text(text);
             $('#information').animate({
-                bottom: '-140px'
+                bottom: '68px'
             });
-        }, time);
+            setTimeout(function () {
+                $('#information').animate({
+                    bottom: '-140px'
+                });
+            }, time);
+        } else {
+            $('#information').css('background', color);
+            $('#information a').text(text);
+            if (show == true) {
+                $('#information').animate({
+                    bottom: '68px'
+                });
+            } else {
+                $('#information').animate({
+                    bottom: '-140px'
+                });
+            }
+        }
     }
 
     $('#run-login').on('click', function () {
