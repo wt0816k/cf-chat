@@ -362,7 +362,7 @@
 
     document.onvisibilitychange = function () {
         if (isloginactive) {
-            if (document.visibilityState === 'hidden') {
+            if (document.visibilityState == 'hidden') {
                 isactive = false;
                 sendOnlineStatus('offline');
             }
