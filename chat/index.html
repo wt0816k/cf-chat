@@ -346,7 +346,14 @@
         }).format(new Date());
 
         const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
-        const json = { dataid: id, token: token, timestamp: date, username: username, message: message };
+        const json = {
+            type: 'add',
+            dataid: id,
+            token: token,
+            timestamp: date,
+            username: username,
+            message: message
+        };
 
         const params = {
             "method": "POST",
@@ -355,7 +362,6 @@
             "body": JSON.stringify(json)
         };
         fetch(url, params);
-
     }
 
     document.onvisibilitychange = function () {
