@@ -296,7 +296,7 @@
                     $('.message-data-button-remove').on('click', function () {
                         const parent = $(this).parent();
                         const mymessage = $('.message-data-message').eq($('.message-data-buttons').index(parent)).text();
-                        $('#confirm-dialog-text').text('メッセージ: "' + mymessage + '"を送信取り消ししますか？')
+                        $('#confirm-dialog-text').text('メッセージ: ' + mymessage + ' を送信取り消ししますか？')
                         $('#login-dialog').hide();
                         $('#confirm-dialog').show();
                         $('#js-modal').fadeIn(140);
