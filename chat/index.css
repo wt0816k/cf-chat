@@ -374,7 +374,7 @@ input[type="text"]:focus {
     color: #5f5f5f;
 }
 
-#offline-message {
+#information {
     position: absolute;
     bottom: -140px;
     left: 12px;
