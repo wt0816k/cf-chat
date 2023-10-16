@@ -419,3 +419,7 @@ input[type="text"]:focus {
     height: 26px;
     text-align: center;
 }
+
+.message-data-button:hover {
+    background: #d2d2d2;
+}
