@@ -123,7 +123,7 @@
                 </div>
             </div>
             <div id="information">
-                <a>現在、オフラインです。接続を待機しています...</a>
+                <a></a>
             </div>
         </main>
         <footer class="input-area">
@@ -669,13 +669,14 @@
     });
 
     $(window).on('online', function () {
-        $('#offline-message').animate({
+        $('#information').animate({
             bottom: '-140px'
         });
     });
 
     $(window).on('offline', function () {
-        $('#offline-message').animate({
+        $('#information a').text('現在、オフラインです。接続を待機しています...');
+        $('#information').animate({
             bottom: '68px'
         });
     });
