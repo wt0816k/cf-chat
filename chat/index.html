@@ -420,11 +420,6 @@
                 }
             })
             .then(function (json) {
-                //if (_.isEqual(json, oldjson_users)) {
-                //} else {
-                //    oldjson_users = json;
-                //}
-
                 $('#users-data').empty();
                 for (const data of json) {
                     const status = data.status;
