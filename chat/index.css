@@ -208,8 +208,23 @@ input[type="text"]:focus {
     z-index: 3;
 }
 
-#send:hover {
-    background: #227aeb;
+#send:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(225deg, #405de6, #5851db, #833ab4, #c13584, #e1306c);
+    opacity: 0;
+    transition: .3s;
+    border-radius: 100px;
+}
+
+#send:hover:after {
+    opacity: 1;
 }
 
 .main {
