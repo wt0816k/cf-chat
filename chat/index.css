@@ -392,3 +392,9 @@ input[type="text"]:focus {
     color: #ffffff;
     font-size: 14px;
 }
+
+.message-data-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
