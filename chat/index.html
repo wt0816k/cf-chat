@@ -385,7 +385,12 @@
 
     function sendOnlineStatus(status) {
         const url = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
-        const json = { dataid: id, token: token, username: username, status: status };
+        const json = {
+            dataid: id,
+            token: token,
+            username: username,
+            status: status
+        };
         const params = {
             "method": "POST",
             "mode": "no-cors",
@@ -398,7 +403,10 @@
 
     function getOnlineStatus() {
         const gas = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
-        const json = { dataid: id, token: token };
+        const json = {
+            dataid: id,
+            token: token
+        };
         const query = new URLSearchParams(json);
         const url = gas + '?' + query;
 
