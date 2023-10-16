@@ -232,7 +232,7 @@ input[type="text"]:focus {
 
 .message-data-items {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     padding-top: 3px;
     padding-bottom: 3px;
     transition-duration: 0.08s;
@@ -393,8 +393,13 @@ input[type="text"]:focus {
     font-size: 14px;
 }
 
-.message-data-button {
+.message-data-buttons {
     margin-left: auto;
     display: flex;
     align-items: center;
+}
+
+.message-data-button {
+    width: 26px;
+    height: 26px;
 }
