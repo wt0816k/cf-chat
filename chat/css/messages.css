@@ -18,7 +18,7 @@
 
 .message-data-items {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 3px;
     padding-bottom: 3px;
     transition-duration: 0.08s;
