@@ -69,3 +69,15 @@ input[type="text"]:focus {
 #send:hover:after {
     opacity: 1;
 }
+
+#open-gif-dialog {
+    z-index: 3;
+    position: fixed;
+    bottom: 10px;
+    right: 71px;
+    transition-duration: 0.3s;
+}
+
+#open-gif-dialog:hover {
+    background: #cecece;
+}
