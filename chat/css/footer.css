@@ -70,7 +70,7 @@ input[type="text"]:focus {
     opacity: 1;
 }
 
-#open-gif-dialog {
+.footer-buttons {
     display: flex;
     position: fixed;
     width: 38px;
@@ -84,6 +84,6 @@ input[type="text"]:focus {
     z-index: 3;
 }
 
-#open-gif-dialog:hover {
+.footer-buttons:hover {
     background: #cecece;
 }
