@@ -5,20 +5,6 @@ body {
     overflow: hidden;
 }
 
-:root {
-    --color-users-backgroud: #f7f7f7;
-    --color-users-online: #00bb1f;
-    --color-users-offline: #b9b9b9;
-
-    --color-message-background: #ffffff;
-    --color-message-background-my: #ffffff;
-    --color-message-text: #000000;
-    --color-message-timestamp: #8d8d8d;
-    --color-message-link: #0000ee;
-
-    --color-expand-arrow: #858585;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -37,87 +23,6 @@ body {
 
 .main {
     font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
-}
-
-.message-area {
-    width: calc(100vw - 210px);
-    height: calc(100vh - 26px);
-    background: var(--color-message-background);
-}
-
-#message-data {
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 32px);
-    overflow: hidden scroll;
-    background: var(--color-message-background);
-}
-
-.message-data-my {
-    background: var(--color-message-background-my);
-}
-
-.message-data-items {
-    display: flex;
-    align-items: center;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    transition-duration: 0.08s;
-    cursor: default;
-    background: var(--color-message-background);
-}
-
-.message-data-items:hover {
-    background: #ebebeb;
-}
-
-.message-data-item {
-    font-size: 18px;
-    font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-.message-data-timestamp {
-    color: var(--color-message-timestamp);
-    font-size: 16px;
-}
-
-.message-data-username {
-    font-weight: 600;
-}
-
-.message-data-link {
-    color: var(--color-message-link);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.shake {
-    display: inline-block;
-    animation: shake-effect .12s 6;
-}
-
-@keyframes shake-effect {
-    0% {
-        transform: translate(0px, 0px) rotateZ(0deg)
-    }
-
-    25% {
-        transform: translate(1px, 1px) rotateZ(0.5deg)
-    }
-
-    50% {
-        transform: translate(0px, 1px) rotateZ(0deg)
-    }
-
-    75% {
-        transform: translate(1px, 0px) rotateZ(-0.5deg)
-    }
-
-    100% {
-        transform: translate(0px, 0px) rotateZ(0deg)
-    }
 }
 
 .main>main {
@@ -218,21 +123,4 @@ body {
 #information>a {
     color: #ffffff;
     font-size: 14px;
-}
-
-.message-data-buttons {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: 2px;
-}
-
-.message-data-button {
-    width: 26px;
-    height: 26px;
-    text-align: center;
-}
-
-.message-data-button:hover {
-    background: #d2d2d2;
 }

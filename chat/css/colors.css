@@ -1,0 +1,13 @@
+:root {
+    --color-users-backgroud: #f7f7f7;
+    --color-users-online: #00bb1f;
+    --color-users-offline: #b9b9b9;
+
+    --color-message-background: #ffffff;
+    --color-message-background-my: #ffffff;
+    --color-message-text: #000000;
+    --color-message-timestamp: #8d8d8d;
+    --color-message-link: #0000ee;
+
+    --color-expand-arrow: #858585;
+}
