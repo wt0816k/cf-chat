@@ -88,8 +88,8 @@
                                     fill="#858585"></path>
                             </g>
                         </svg>
-                        <svg id="groups-arrow-down" style="display: none;" width="24px" height="24px" viewBox="0 0 24 24"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="groups-arrow-down" style="display: none;" width="24px" height="24px"
+                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -180,7 +180,7 @@
     //import { createPicker } from 'picmo';
     const Chat_Database = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
     const Chat_OnlineStatus = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
-    
+
     var islogindata = false;
     var isloginactive = false;
     var id = '';
@@ -324,10 +324,10 @@
                             elem =
                                 `
                             <div class="message-data-items ${classname}">
-                                <span class="message-data-item message-data-id" style="display: none;">${data.id}</span>
                                 <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
                                 <span class="message-data-item message-data-username">${data.username}</span>
                                 <a class="message-data-item message-data-message ${link}" ${href}>${data.message}</a>
+                                <span class="message-data-item message-data-id">${data.id}</span>
                                 <div class="message-data-buttons">
                                     ${buttons}
                                 </div>
@@ -339,13 +339,16 @@
                     }
 
                     $('.message-data-buttons').hide();
+                    $('.message-data-id').hide();
                     $('.message-data-items').hover(function () {
                         const index = $('.message-data-items').index(this);
                         $('.message-data-buttons').hide();
+                        $('.message-data-id').hide();
                         $('.message-data-buttons').eq(index).show();
+                        $('.message-data-id').eq(index).show();
                     }, function () {
-                        const index = $('.message-data-items').index(this);
                         $('.message-data-buttons').hide();
+                        $('.message-data-id').hide();
                     });
 
                     $('.message-data-button-remove').on('click', function () {
