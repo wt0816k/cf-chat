@@ -902,6 +902,10 @@
         }
     })
 
+    $('#open-gif-dialog').on('click', function () {
+        $('#gif-dialog').fadeIn(100);
+    });
+
     $(window).on('beforeunload', function () {
         sendOnlineStatus('offline');
     });
