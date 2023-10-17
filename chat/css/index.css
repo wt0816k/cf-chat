@@ -131,6 +131,7 @@ body {
     width: 220px;
     transform: translateY(8px) translateX(8px);
     opacity: 0.8;
+    background: #000000;
 }
 
 #preview-dialog>img {
