@@ -128,8 +128,9 @@ body {
 #preview-dialog {
     display: inline-block;
     position: absolute;
-    width: 320px;
+    width: 240px;
     border-radius: 3px;
+    transform: translateY(8px) translateX(8px);
 }
 
 #preview-dialog>img {
