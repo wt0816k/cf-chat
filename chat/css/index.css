@@ -141,3 +141,14 @@ body {
     height: auto;
     object-fit: cover;
 }
+
+#gif-dialog>iframe {
+    position: absolute;
+    right: 15px;
+    bottom: 58px;
+    border: none;
+    width: 370px;
+    height: 410px;
+    border-radius: 7px;
+    z-index: 4;
+}
