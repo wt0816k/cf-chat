@@ -40,6 +40,7 @@
 .message-data-timestamp {
     color: var(--color-message-timestamp);
     font-size: 16px;
+    padding-top: 3px;
     text-wrap: nowrap;
 }
 
