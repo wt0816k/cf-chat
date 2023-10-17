@@ -252,12 +252,13 @@
                     for (const data of json) {
                         if (data.flags != 'removed') {
                             var classname = '';
+                            var link = '';
                             var href = '';
                             var elem = '';
                             var buttons = '';
 
                             if (isValidUrl(data.message)) {
-                                classname = ' message-data-link';
+                                link = ' message-data-link';
                                 href = 'href="' + data.message + '" target="_blank" rel="noopener noreferrer"';
                             }
 
@@ -293,7 +294,7 @@
                                 <span class="message-data-item message-data-id" style="display: none;">${data.id}</span>
                                 <span class="message-data-item message-data-timestamp">${data.timestamp}</span>
                                 <span class="message-data-item message-data-username">${data.username}</span>
-                                <a class="message-data-item message-data-message" ${href}>${data.message}</a>
+                                <a class="message-data-item message-data-message ${link}" ${href}>${data.message}</a>
                                 <div class="message-data-buttons">
                                     ${buttons}
                                 </div>
