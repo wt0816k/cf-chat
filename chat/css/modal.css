@@ -9,10 +9,11 @@
 }
 
 .modal {
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
+    position: absolute;
     width: 460px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
 }
 
 .modal__inner {
@@ -36,7 +37,8 @@
     display: inline-block;
 }
 
-#login-dialog>h1, #confirm-dialog>h1 {
+#login-dialog>h1,
+#confirm-dialog>h1 {
     font-size: 24px;
 }
 
@@ -97,21 +99,25 @@
     transition-duration: 0.21s;
 }
 
-#run-login, #confirm-ok {
+#run-login,
+#confirm-ok {
     background: #77dff7;
 }
 
-#run-login:hover, #confirm-ok:hover {
+#run-login:hover,
+#confirm-ok:hover {
     background: #4bd6f5;
 }
 
-#run-logout, #confirm-cancel {
+#run-logout,
+#confirm-cancel {
     margin-right: 20px;
     padding-left: 24px;
     padding-right: 24px;
     background: #f77777;
 }
 
-#run-logout:hover, #confirm-cancel:hover {
+#run-logout:hover,
+#confirm-cancel:hover {
     background: #f54b4b;
 }
