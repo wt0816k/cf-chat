@@ -128,9 +128,9 @@ body {
 #preview-dialog {
     display: inline-block;
     position: absolute;
-    width: 240px;
-    border-radius: 3px;
+    width: 220px;
     transform: translateY(8px) translateX(8px);
+    opacity: 0.8;
 }
 
 #preview-dialog>img {
