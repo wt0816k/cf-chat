@@ -166,6 +166,9 @@
             <div id="information">
                 <a></a>
             </div>
+            <div id="preview-dialog">
+                <img>
+            </div>
         </main>
         <footer class="input-area">
             <div>
@@ -349,6 +352,14 @@
                     }, function () {
                         $('.message-data-buttons').hide();
                         $('.message-data-id').hide();
+                    });
+
+                    $('.message-data-link').hover(function () {
+                        const link = $(this).text();
+                        $('#preview-dialog').fadeIn(100);
+                        $('#preview-dialog img').attr('src', link);
+                    }, function () {
+                        $('#preview-dialog').fadeOut(100);
                     });
 
                     $('.message-data-button-remove').on('click', function () {
