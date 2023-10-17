@@ -354,8 +354,14 @@
                         $('.message-data-id').hide();
                     });
 
-                    $('.message-data-link').hover(function () {
+                    $('.message-data-link').hover(function (e) {
                         const link = $(this).text();
+                        const x = e.clientX;
+                        const y = e.clientY;
+
+                        $('#preview-dialog').style('top', x);
+                        $('#preview-dialog').style('left', y);
+    
                         $('#preview-dialog').fadeIn(100);
                         $('#preview-dialog img').attr('src', link);
                     }, function () {
