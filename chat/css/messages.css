@@ -58,6 +58,11 @@
     overflow: hidden;
 }
 
+.messgae-data-id {
+    color: #c5c5c5;
+    padding-top: 2px;
+}
+
 .message-data-buttons {
     display: flex;
     align-items: center;
