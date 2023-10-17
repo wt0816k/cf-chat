@@ -178,7 +178,9 @@
 <script type="module" src="https://unpkg.com/picmo@latest/dist/umd/index.js"></script>
 <script>
     //import { createPicker } from 'picmo';
-
+    const Chat_Database = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+    const Chat_OnlineStatus = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
+    
     var islogindata = false;
     var isloginactive = false;
     var id = '';
@@ -244,7 +246,7 @@
     }
 
     async function removeMessage(_id) {
-        const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const url = Chat_Database;
         const json = {
             type: 'remove',
             dataid: id,
@@ -262,7 +264,7 @@
     }
 
     async function getMessage() {
-        const gas = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const gas = Chat_Database;
         const count = 50;
         const param = new URLSearchParams({ dataid: id, token: token, count: count })
         const url = gas + '?' + param;
@@ -500,7 +502,7 @@
             second: "2-digit",
         }).format(new Date());
 
-        const url = 'https://script.google.com/macros/s/AKfycbx5D_ZqWRNmhulnp7ZAHXZX8llFqunr5n03-hELS_umOWkLwri75mCvpT-Jtx43VwRM/exec';
+        const url = Chat_Database;
         const json = {
             type: 'add',
             dataid: id,
@@ -539,7 +541,7 @@
     }
 
     function sendOnlineStatus(status) {
-        const url = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
+        const url = Chat_OnlineStatus;
         const json = {
             dataid: id,
             token: token,
@@ -557,7 +559,7 @@
     }
 
     function getOnlineStatus() {
-        const gas = 'https://script.google.com/macros/s/AKfycbwnb9HadY-6snnlREyqIAAs82YBSjir6fk7bKK7qaEN2hD05uZpWoCaFXWtEoAjzbgP/exec';
+        const gas = Chat_OnlineStatus;
         const json = {
             dataid: id,
             token: token
