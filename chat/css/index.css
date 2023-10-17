@@ -126,6 +126,7 @@ body {
 }
 
 #preview-dialog {
+    display: inline-block;
     position: absolute;
     width: 320px;
     border-radius: 3px;
