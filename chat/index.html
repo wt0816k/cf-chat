@@ -365,7 +365,9 @@
                         $('#preview-dialog').fadeIn(100);
                         $('#preview-dialog img').attr('src', link);
                     }, function () {
-                        $('#preview-dialog').fadeOut(100);
+                        setTimeout(function () {
+                            $('#preview-dialog').fadeOut(100);
+                        }, 1500);
                     });
 
                     $('.message-data-button-remove').on('click', function () {
