@@ -40,10 +40,12 @@
 .message-data-timestamp {
     color: var(--color-message-timestamp);
     font-size: 16px;
+    text-wrap: nowrap;
 }
 
 .message-data-username {
     font-weight: 600;
+    text-wrap: nowrap;
 }
 
 .message-data-link {
