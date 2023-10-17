@@ -362,10 +362,10 @@
                         $('#preview-dialog').css('top', x);
                         $('#preview-dialog').css('left', y);
     
-                        $('#preview-dialog').show();
+                        $('#preview-dialog').fadeIn(100);
                         $('#preview-dialog img').attr('src', link);
                     }, function () {
-                        $('#preview-dialog').hide();
+                        $('#preview-dialog').fadeOut(100);
                     });
 
                     $('.message-data-button-remove').on('click', function () {
