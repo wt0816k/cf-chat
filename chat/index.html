@@ -144,6 +144,7 @@
         </footer>
     </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/emoji-button@0.6.0/dist/index.min.js"></script>
 <script>
     var islogindata = false;
     var isloginactive = false;
@@ -320,6 +321,12 @@
                         $('#confirm-dialog').show();
                         $('#js-modal').fadeIn(140);
                     });
+
+                    $('.message-data-button-emoji').on('click', function () {
+                        EmojiButton(document.querySelector('.message-data-button-emoji'), function (emoji) {
+                            // emoji
+                        });
+                    })
 
                     $('#confirm-ok').on('click', function () {
                         const _id = $('.message-data-id').eq(_temp_id).text();
@@ -801,7 +808,7 @@
         if (document.getElementById('highlight-mymessage').checked) {
             document.documentElement.style.setProperty('--color-message-background-my', '#b3e6ff');
         } else {
-            document.documentElement.style.setProperty('--color-message-background-my', '#ffffff');    
+            document.documentElement.style.setProperty('--color-message-background-my', '#ffffff');
         }
     })
 
