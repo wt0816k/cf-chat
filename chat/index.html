@@ -925,7 +925,7 @@
         $('#gif-dialog').fadeIn(100);
     });
 
-    $(document).not('#gif-dialog').on('click', function () {
+    $('*').not('#gif-dialog').on('click', function () {
         $('#gif-dialog').fadeOut(100);
     });
 
@@ -951,6 +951,7 @@
         $('#confirm-dialog').hide();
         $('#login-dialog').show();
         $('.main').eq(0).hide();
+        $('#gif-dialog').hide();
 
         islogindata = loadLoginInfo();
         if (islogindata) {
