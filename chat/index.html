@@ -170,7 +170,7 @@
                 <img alt onerror="this.onerror = null; this.src='';">
             </div>
             <div id="gif-dialog">
-                <iframe style="display: none;" src=""></iframe>
+                <iframe src=""></iframe>
             </div>
         </main>
         <footer class="input-area">
@@ -923,6 +923,10 @@
 
     $('#open-gif-dialog').on('click', function () {
         $('#gif-dialog').fadeIn(100);
+    });
+
+    $(document).not('#gif-dialog').on('click', function () {
+        $('#gif-dialog').fadeOut(100);
     });
 
     $(window).on('beforeunload', function () {
