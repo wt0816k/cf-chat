@@ -59,6 +59,11 @@
     margin-left: 0px;
 }
 
+.message-data-gif {
+    width: 230px;
+    height: auto;
+}
+
 .message-data-id {
     color: #c5c5c5;
     padding-top: 2px;
