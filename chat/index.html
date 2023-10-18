@@ -929,8 +929,12 @@
         }
     });
 
-    $('*').not('#gif-dialog, #open-gif-dialog, svg').on('click', function () {
-        $('#gif-dialog').fadeOut(100);
+    $('*').not('#gif-dialog, #open-gif-dialog').on('click', function () {
+        if ($('#gif-dialog').is(':visible')) {
+            $('#gif-dialog').fadeIn(100);
+        } else {
+            $('#gif-dialog').fadeOut(100);
+        }
     });
 
     $(window).on('beforeunload', function () {
