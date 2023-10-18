@@ -144,11 +144,12 @@ body {
 
 #gif-dialog>iframe {
     position: absolute;
-    right: 15px;
-    bottom: 58px;
+    right: 18px;
+    bottom: 60px;
     border: none;
     width: 370px;
     height: 410px;
     border-radius: 7px;
+    box-shadow: 1px 1px 4px 4px rgb(0 0 0 / 13%);
     z-index: 4;
 }
