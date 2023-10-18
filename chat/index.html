@@ -954,9 +954,7 @@
     });
 
     $(window).on('message', function (response) {
-        if (isValidUrl(response)) {
-            sendMessage('g:' + response);
-        }
+        sendMessage(response);
     });
 
     $(function () {
