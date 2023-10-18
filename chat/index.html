@@ -929,9 +929,9 @@
         }
     });
 
-    $('*').not('#gif-dialog, #open-gif-dialog').on('click', function () {
-        $('#gif-dialog').fadeOut(100);
-    });
+    //$('*').not('#gif-dialog, #open-gif-dialog').on('click', function () {
+    //    $('#gif-dialog').fadeOut(100);
+    //});
 
     $(window).on('beforeunload', function () {
         sendOnlineStatus('offline');
