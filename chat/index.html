@@ -922,7 +922,11 @@
     })
 
     $('#open-gif-dialog').on('click', function () {
-        $('#gif-dialog').fadeIn(100);
+        if ($('#gif-dialog').is(':visible')) {
+            $('#gif-dialog').fadeOut(100);
+        } else {
+            $('#gif-dialog').fadeIn(100);
+        }
     });
 
     $('*').not('#gif-dialog, #open-gif-dialog').on('click', function () {
